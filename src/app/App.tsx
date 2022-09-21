@@ -1,23 +1,23 @@
-import React from "react";
+import React, {Suspense} from "react";
 import "./styles/index.scss"
-import {Link} from "react-router-dom";
 import {useTheme} from "app/providers/themeProvider";
 import {classNames} from "shared/lib/classNames/classNames";
 import {AppRouter} from "app/providers/router";
-
+import {Navbar} from "widgets/Navbar";
+import {Sidebar} from "widgets/Sidebar";
 
 export const App = () => {
-    const {theme, changeTheme} = useTheme()
+	const {theme} = useTheme();
 
-    return (
-        <div className={classNames("app", {}, [theme])}>
-            <div>
-                <button onClick={changeTheme}>theme</button>
-            </div>
-
-            <Link to="/">Главная </Link><br/>
-            <Link to="/about">о сайте </Link>
-            <AppRouter/>
-        </div>
-    );
+	return (
+		<Suspense fallback="">
+			<div className={classNames("app", {}, [theme])}>
+				<Navbar/>
+				<div className="content-page">
+					<Sidebar/>
+					<AppRouter/>
+				</div>
+			</div>
+		</Suspense>
+	);
 };
