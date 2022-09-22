@@ -10,7 +10,7 @@ export function useTheme(): useThemeResult {
     const {theme, setTheme} = useContext(ThemeContext);
 
     const changeTheme = () => {
-    	const newTheme = theme === "light" ? Theme.DARK : Theme.LIGHT;
+        const newTheme = theme === "light" ? Theme.DARK : Theme.LIGHT;
         setTheme(newTheme);
         localStorage.setItem(LOCAL_STORAGE_THEME_KEY, newTheme)
     }
