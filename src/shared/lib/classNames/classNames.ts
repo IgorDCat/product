@@ -1,4 +1,4 @@
-type Mods = Record<string, string | boolean>
+type Mods = Record<string, string | boolean>;
 
 export function classNames(cls: string, mods: Mods = {}, additional: string[] = []) {
     return [
