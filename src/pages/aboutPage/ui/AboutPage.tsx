@@ -8,6 +8,6 @@ const AboutPage = () => {
             {t("About page")}
         </div>
     );
-};
+}
 
 export default AboutPage;

@@ -1,6 +1,7 @@
 {
   "test example": "тестовый пример",
   "translate": "перевод",
-  "About page": "О нас",
-  "Main Page": "Главная страница"
+  "About us": "О сайте",
+  "Main page": "Главная страница",
+  "404 Page not found": "404 Страница не найдена"
 }
