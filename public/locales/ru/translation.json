@@ -3,5 +3,7 @@
   "translate": "перевод",
   "About us": "О сайте",
   "Main page": "Главная страница",
-  "404 Page not found": "404 Страница не найдена"
+  "404 Page not found": "404 Страница не найдена",
+  "Error: Something went wrong": "Ошибка: Что-то пошло не так",
+  "Reload page": "Перезагрузить страницу"
 }
