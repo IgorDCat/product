@@ -12,6 +12,12 @@ module.exports = {
         // "plugin:i18next/recommended"
     ],
     "overrides": [
+        {
+            files: ["**/?(*.)+(spec|test).[tj]s?(x)"],
+            rules: {
+                "i18next/no-literal-string": "off"
+            }
+        }
     ],
     "parser": "@typescript-eslint/parser",
     "parserOptions": {
@@ -28,6 +34,7 @@ module.exports = {
         "linebreak-style": ["error", "windows"],
         "quotes": ["error", "double"],
         "semi-style": ["error", "last"],
-    //    "i18next/no-literal-string": ["error", {markupOnly: true}]
+        "i18next/no-literal-string": ["error", {markupOnly: true}],
+        "react/react-in-jsx-scope": "off"
     }
 };
