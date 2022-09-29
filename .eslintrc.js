@@ -34,7 +34,14 @@ module.exports = {
         "linebreak-style": ["error", "windows"],
         "quotes": ["error", "double"],
         "semi-style": ["error", "last"],
-        "i18next/no-literal-string": ["error", {markupOnly: true}],
-        "react/react-in-jsx-scope": "off"
-    }
+        "i18next/no-literal-string": ["error", {
+            markupOnly: true,
+            ignoreAttribute: ["data-testid", "to"],
+        }],
+        "react/react-in-jsx-scope": "off",
+        "react/display-name": "off"
+    },
+    globals: {
+        __IS_DEV__: true,
+    },
 };
