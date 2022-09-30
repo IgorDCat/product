@@ -6,8 +6,7 @@ import {BundleAnalyzerPlugin} from "webpack-bundle-analyzer";
 import {getRandomInteger} from "../../src/helpers/getRandomInteger/getRandomInteger";
 
 export function buildPlugins({paths, isDev}: buildOptions): webpack.WebpackPluginInstance[] {
-
-    return [
+    const plugins = [
         new HtmlWebpackPlugin({template: paths.html}),
         new webpack.ProgressPlugin(),
         new MiniCssExtractPlugin({
@@ -17,9 +16,15 @@ export function buildPlugins({paths, isDev}: buildOptions): webpack.WebpackPlugi
         new webpack.DefinePlugin({
             __IS_DEV__: JSON.stringify(isDev),
         }),
-        new BundleAnalyzerPlugin({
-            analyzerPort: getRandomInteger(4001, 4999),
-            openAnalyzer: false
-        })
+
     ]
+    if (isDev) {
+        plugins.push(
+            new BundleAnalyzerPlugin({
+                analyzerPort: getRandomInteger(4001, 4999),
+                openAnalyzer: false
+            })
+        )
+    }
+    return plugins;
 }
