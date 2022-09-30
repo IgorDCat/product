@@ -31,7 +31,7 @@ module.exports = {
     ],
     "rules": {
         "indent": ["error", 4],
-        "linebreak-style": ["error", "windows"],
+        "linebreak-style": "off",
         "quotes": ["error", "double"],
         "semi-style": ["error", "last"],
         "i18next/no-literal-string": ["error", {
