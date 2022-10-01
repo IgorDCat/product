@@ -5,5 +5,7 @@
   "Main page": "Главная страница",
   "404 Page not found": "404 Страница не найдена",
   "Error: Something went wrong": "Ошибка: Что-то пошло не так",
-  "Reload page": "Перезагрузить страницу"
+  "Reload page": "Перезагрузить страницу",
+  "$language": "Русский",
+  "$shortLang": "RU"
 }

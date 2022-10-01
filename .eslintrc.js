@@ -39,7 +39,8 @@ module.exports = {
             ignoreAttribute: ["data-testid", "to"],
         }],
         "react/react-in-jsx-scope": "off",
-        "react/display-name": "off"
+        "react/display-name": "off",
+        "@typescript-eslint/no-var-requires": "off"
     },
     globals: {
         __IS_DEV__: true,

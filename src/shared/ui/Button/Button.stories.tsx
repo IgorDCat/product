@@ -37,3 +37,16 @@ OutlineDark.args = {
     theme: ThemeButton.OUTLINE,
 };
 OutlineDark.decorators = [ThemeDecorator(Theme.DARK)];
+
+export const Collapse = Template.bind({});
+Collapse.args = {
+    children: "→",
+    theme: ThemeButton.COLLAPSE,
+};
+
+export const CollapseDark = Template.bind({});
+CollapseDark.args = {
+    children: "→",
+    theme: ThemeButton.COLLAPSE,
+};
+CollapseDark.decorators = [ThemeDecorator(Theme.DARK)];

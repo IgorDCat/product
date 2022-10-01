@@ -1,5 +1,6 @@
 .Button {
     cursor: pointer;
+    padding: 5px 10px;
     color: var(--primary-color);
 }
 
@@ -10,9 +11,16 @@
 }
 
 .outline {
-    padding: 5px 15px;
     border: 1px solid var(--primary-color);
     color: var(--primary-color);
     background: none;
     border-radius: 3px;
+}
+
+.collapse {
+    padding: 15px 3px;
+    border: var(--secondary-color) 2px solid;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    background: var(--navbar-color);
 }
