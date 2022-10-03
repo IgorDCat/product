@@ -9,13 +9,14 @@ module.exports = {
         "eslint:recommended",
         "plugin:react/recommended",
         "plugin:@typescript-eslint/recommended",
-        // "plugin:i18next/recommended"
+        "plugin:i18next/recommended"
     ],
     "overrides": [
         {
-            files: ["**/?(*.)+(spec|test).[tj]s?(x)"],
+            files: ["**/?(*.)+(test|stories).[tj]s?(x)"],
             rules: {
-                "i18next/no-literal-string": "off"
+                "i18next/no-literal-string": "off",
+                "max-len": "off"
             }
         }
     ],
@@ -27,7 +28,8 @@ module.exports = {
     "plugins": [
         "react",
         "@typescript-eslint",
-        "i18next"
+        "i18next",
+        "react-hooks"
     ],
     "rules": {
         "indent": ["error", 4],
@@ -40,7 +42,9 @@ module.exports = {
         }],
         "react/react-in-jsx-scope": "off",
         "react/display-name": "off",
-        "@typescript-eslint/no-var-requires": "off"
+        "@typescript-eslint/no-var-requires": "off",
+        "react-hooks/rules-of-hooks": "error", // Checks rules of Hooks
+        "react-hooks/exhaustive-deps": "error" // Checks effect dependencies
     },
     globals: {
         __IS_DEV__: true,

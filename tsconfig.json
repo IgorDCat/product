@@ -12,7 +12,8 @@
       "*": ["src/*"]
     },
     "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true
+    "allowSyntheticDefaultImports": true,
+    "skipLibCheck": true
   },
   "ts-node": {
     "compilerOptions": {
@@ -22,5 +23,8 @@
   "include": [
     "./src/",
     "./config/build/types/config.ts"
+  ],
+  "exclude": [
+    "./node_modules"
   ]
 }
