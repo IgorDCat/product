@@ -4,6 +4,7 @@ import {ThemeDecorator} from "../../src/shared/config/storybook/ThemeDecorator";
 import {Theme} from "../../src/app/providers/themeProvider";
 import {RouterDecorator} from "../../src/shared/config/storybook/RouterDecorator";
 
+
 export const parameters = {
     actions: { argTypesRegex: "^on[A-Z].*" },
     controls: {
