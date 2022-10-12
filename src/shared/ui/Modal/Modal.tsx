@@ -8,14 +8,15 @@ interface ModalProps {
     className?: string;
     children?: ReactNode;
     isOpen?: boolean;
-    onClose?: () => void
+    onClose?: () => void;
 }
 
 export const Modal = (props: ModalProps) => {
     const {children, className, isOpen, onClose} = props;
+
     const [isClosing, setIsClosing] = useState(false);
     const timerRef = useRef<ReturnType<typeof setTimeout>>();
-    const {theme} = useTheme()
+    const {theme} = useTheme();
 
     const closeHandler = useCallback(() => {
         if (onClose) {

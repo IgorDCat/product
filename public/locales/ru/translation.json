@@ -8,5 +8,8 @@
   "Reload page": "Перезагрузить страницу",
   "$language": "Русский",
   "$shortLang": "RU",
-  "text of modal": "текст модального окна"
+  "text of modal": "текст модального окна",
+  "Log-in": "Войти",
+  "username": "имя пользователя",
+  "password": "пароль"
 }

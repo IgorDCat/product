@@ -8,5 +8,8 @@
   "Reload page": "Reload page",
   "$language": "English",
   "$shortLang": "EN",
-  "text of modal": "text of modal"
+  "text of modal": "text of modal",
+  "Log-in": "Log-in",
+  "username": "username",
+  "password": "password"
 }
