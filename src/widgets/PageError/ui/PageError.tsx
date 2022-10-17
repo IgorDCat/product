@@ -6,13 +6,18 @@ import {Button, ThemeButton} from "shared/ui/Button/Button";
 
 export const PageError = () => {
     const {t} = useTranslation();
+
     const reloadPage = () => {
         location.reload()
     }
+
     return (
         <div className={classNames(cls.PageError)}>
             <p>{t("Error: Something went wrong")}</p>
-            <Button theme={ThemeButton.OUTLINE} onClick={reloadPage}>{t("Reload page")}</Button>
+            
+            <Button theme={ThemeButton.OUTLINE} onClick={reloadPage}>
+                {t("Reload page")}
+            </Button>
         </div>
     );
 }

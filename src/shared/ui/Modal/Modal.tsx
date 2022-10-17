@@ -9,10 +9,11 @@ interface ModalProps {
     children?: ReactNode;
     isOpen?: boolean;
     onClose?: () => void;
+    disablePortal?: boolean;
 }
 
 export const Modal = (props: ModalProps) => {
-    const {children, className, isOpen, onClose} = props;
+    const {children, className, isOpen, onClose, disablePortal} = props;
 
     const [isClosing, setIsClosing] = useState(false);
     const timerRef = useRef<ReturnType<typeof setTimeout>>();
@@ -54,7 +55,7 @@ export const Modal = (props: ModalProps) => {
     }
 
     return (
-        <Portal>
+        <Portal disablePortal={disablePortal}>
             <div className={classNames(cls.Modal, mods, [className, theme])}>
                 <div className={cls.overlay} onClick={closeHandler}>
                     <div className={cls.content} onClick={onContentClick}>

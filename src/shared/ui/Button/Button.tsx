@@ -8,15 +8,19 @@ export enum ThemeButton {
     COLLAPSE = "collapse"
 }
 
-interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement>{
+type HTMLButtonProps = Omit<ButtonHTMLAttributes<HTMLButtonElement>, "disabled">
+
+interface ButtonProps extends HTMLButtonProps{
 	className?: string;
-	theme?: ThemeButton
+	theme?: ThemeButton;
+    disabled?: string | boolean;
 }
 
 export const Button: FC<ButtonProps> = (props) => {
     const {className, children, theme, disabled, ...otherProps} = props
     return (
-        <button className={classNames(cls.Button, {[cls.disabled]: disabled}, [className, cls[theme]])} {...otherProps}>
+        <button className={classNames(cls.Button, {[cls.disabled]: disabled}, [className, cls[theme]])}
+            {...otherProps}>
             {children}
         </button>
     );
