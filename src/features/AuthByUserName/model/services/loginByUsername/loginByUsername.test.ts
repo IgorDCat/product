@@ -1,5 +1,3 @@
-import {Dispatch} from "@reduxjs/toolkit";
-import {StateSchema} from "app/providers/StoreProvider";
 import axios from "axios";
 import {loginByUsername} from "./loginByUsername";
 import {userActions} from "entities/User";

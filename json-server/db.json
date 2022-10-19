@@ -25,5 +25,13 @@
       "password": "123"
     }
   ],
-  "profile": { "name": "typicode" }
+  "profile": {
+    "firstname": "Igor",
+    "lastname": "Davydov",
+    "age": 30,
+    "currency": "usd",
+    "city": "Los-Angeles",
+    "username": "admin",
+    "avatar": "https://avatanplus.com/files/resources/mid/574a4332767e0154fa167d35.jpg"
+  }
 }

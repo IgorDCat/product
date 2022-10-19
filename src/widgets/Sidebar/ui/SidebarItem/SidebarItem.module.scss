@@ -1,0 +1,20 @@
+.item {
+    margin: 10px;
+    transition: all 0.3s;
+}
+
+.itemHidden {
+    visibility: hidden;
+    font-size: 0;
+    line-height: 0;
+}
+
+.mainLink {
+    display: flex;
+    align-items: center;
+    height: 30px;
+}
+
+.icon {
+    fill: var(--primary-color);
+}

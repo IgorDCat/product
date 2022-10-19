@@ -1,7 +1,7 @@
 {
   "test example": "тестовый пример",
   "translate": "перевод",
-  "About us": "О сайте",
+  "About page": "О сайте",
   "Main page": "Главная страница",
   "404 Page not found": "404 Страница не найдена",
   "Error: Something went wrong": "Ошибка: Что-то пошло не так",
@@ -12,5 +12,6 @@
   "Log-in": "Войти",
   "username": "имя пользователя",
   "password": "пароль",
-  "Log-out": "Выйти"
+  "Log-out": "Выйти",
+  "Profile page": "Страница профиля"
 }

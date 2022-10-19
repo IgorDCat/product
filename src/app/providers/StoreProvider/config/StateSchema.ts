@@ -3,11 +3,13 @@ import {UserSchema} from "entities/User";
 import {LoginSchema} from "features/AuthByUserName";
 import {AnyAction, EnhancedStore, Reducer, ReducersMapObject} from "@reduxjs/toolkit";
 import {CombinedState} from "redux";
+import {ProfileSchema} from "entities/Profile";
 
 export interface StateSchema {
     counter: CounterSchema;
     user: UserSchema;
     loginForm?: LoginSchema;
+    profile?: ProfileSchema;
 }
 
 export type StateSchemaKey = keyof StateSchema;

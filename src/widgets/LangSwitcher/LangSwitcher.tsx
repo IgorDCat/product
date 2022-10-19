@@ -1,4 +1,4 @@
-import React from "react";
+import React, {memo} from "react";
 import {classNames} from "shared/lib/classNames/classNames";
 import cls from "./LangSwitcher.module.scss";
 import {useTranslation} from "react-i18next";
@@ -9,7 +9,7 @@ interface LangSwitcherProps {
     short?: boolean
 }
 
-export const LangSwitcher = ({className, short}: LangSwitcherProps) => {
+export const LangSwitcher = memo(({className, short}: LangSwitcherProps) => {
     const {i18n, t} = useTranslation();
     const toggleLang = () => {
         i18n.changeLanguage(i18n.language === "en" ? "ru" : "en");
@@ -21,4 +21,4 @@ export const LangSwitcher = ({className, short}: LangSwitcherProps) => {
             {t(short? "$shortLang" : "$language")}
         </Button>
     )
-}
+})

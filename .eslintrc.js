@@ -45,7 +45,7 @@ module.exports = {
         "@typescript-eslint/no-var-requires": "off",
         "react-hooks/rules-of-hooks": "error", // Checks rules of Hooks
         "react-hooks/exhaustive-deps": "error", // Checks effect dependencies
-        "@typescript-eslint/ban-ts-comment": "off"
+        "@typescript-eslint/ban-ts-comment": "off",
     },
     globals: {
         __IS_DEV__: true,
