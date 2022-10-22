@@ -15,8 +15,12 @@ export default {
 const Template: ComponentStory<typeof ProfilePage> = (args) => <ProfilePage {...args} />;
 
 export const Light = Template.bind({});
-Light.args = {};
+Light.args = {
+    isStories: true
+};
 
 export const Dark = Template.bind({});
-Dark.args = {};
+Dark.args = {
+    isStories: true
+};
 Dark.decorators = [ThemeDecorator(Theme.DARK)];

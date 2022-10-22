@@ -3,6 +3,7 @@ import {classNames} from "shared/lib/classNames/classNames";
 import cls from "./Button.module.scss";
 
 export enum ThemeButton {
+    NORMAL = "normal",
 	CLEAR = "clear",
     OUTLINE = "outline",
     COLLAPSE = "collapse"
@@ -18,7 +19,7 @@ interface ButtonProps extends HTMLButtonProps{
 }
 
 export const Button: FC<ButtonProps> = memo((props: ButtonProps) => {
-    const {className, children, theme, disabled, ...otherProps} = props
+    const {className, children, theme = ThemeButton.NORMAL, disabled, ...otherProps} = props
     return (
         <button className={classNames(cls.Button, {[cls.disabled]: disabled}, [className, cls[theme]])}
             {...otherProps}>

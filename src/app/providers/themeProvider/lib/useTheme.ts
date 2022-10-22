@@ -3,7 +3,7 @@ import {useContext} from "react";
 
 interface useThemeResult {
 	changeTheme: () => void
-	theme: Theme
+	theme?: Theme
 }
 
 export function useTheme(): useThemeResult {
@@ -11,7 +11,7 @@ export function useTheme(): useThemeResult {
 
     const changeTheme = () => {
         const newTheme = theme === "app_light_theme" ? Theme.DARK : Theme.LIGHT;
-        setTheme(newTheme);
+        setTheme?.(newTheme);
         localStorage.setItem(LOCAL_STORAGE_THEME_KEY, newTheme)
     }
 
