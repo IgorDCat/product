@@ -29,9 +29,10 @@
     "firstname": "Igor",
     "lastname": "Davydov",
     "age": 30,
-    "currency": "usd",
+    "currency": "USD",
     "city": "Los-Angeles",
     "username": "admin",
-    "avatar": "https://avatanplus.com/files/resources/mid/574a4332767e0154fa167d35.jpg"
+    "avatar": "https://pbs.twimg.com/profile_images/1538837176863039489/h3lHCMMF_400x400.jpg",
+    "country": "USA"
   }
 }

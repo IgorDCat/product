@@ -20,6 +20,9 @@ export function buildPlugins({paths, isDev, apiUrl}: buildOptions): webpack.Webp
         new BundleAnalyzerPlugin({
             analyzerPort: getRandomInteger(4001, 4999),
             openAnalyzer: false
+        }),
+        new webpack.SourceMapDevToolPlugin({
+            filename: "[name].[contenthash:15].map"
         })
 
     ]

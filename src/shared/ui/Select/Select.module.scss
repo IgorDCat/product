@@ -1,0 +1,19 @@
+.wrapper {
+    display: flex;
+}
+
+.label {
+    margin-right: 5px;
+}
+
+.select {
+    border-radius: 5px;
+    border: var(--primary-color) 1px solid;
+    background: var(--bg-color);
+    color: var(--primary-color);
+    padding: 0 10px;
+}
+
+.option {
+    border-radius: 5px;
+}

@@ -1,4 +1,8 @@
 {
   "Profile": "Profile",
-  "Edit": "Edit"
+  "Edit": "Edit",
+  "Some error has occurred": "Some error has occurred",
+  "Try refresh the page": "Try refresh the page",
+  "Cancel": "Cancel",
+  "Save": "Save"
 }

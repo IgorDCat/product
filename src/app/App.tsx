@@ -5,12 +5,13 @@ import {classNames} from "shared/lib/classNames/classNames";
 import {AppRouter} from "app/providers/router";
 import {Navbar} from "widgets/Navbar";
 import {Sidebar} from "widgets/Sidebar";
-import {useDispatch} from "react-redux";
-import {userActions} from "entities/User";
+import {useDispatch, useSelector} from "react-redux";
+import {getUserAuthData, userActions} from "entities/User";
 
 export const App = () => {
     const {theme} = useTheme();
     const dispatch = useDispatch();
+    const isAuth = Boolean(useSelector(getUserAuthData));
 
     useEffect(() => {
         dispatch(userActions.initAuthData())
@@ -21,8 +22,8 @@ export const App = () => {
             <div className={classNames("app", {}, [theme])}>
                 <Navbar/>
                 <div className="content-page">
-                    <Sidebar/>
-                    <AppRouter/>
+                    <Sidebar isAuth={isAuth}/>
+                    <AppRouter isAuth={isAuth}/>
                 </div>
             </div>
         </Suspense>

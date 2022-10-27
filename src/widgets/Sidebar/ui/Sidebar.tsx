@@ -1,4 +1,4 @@
-import React, {memo, useState} from "react";
+import React, {memo, useMemo, useState} from "react";
 import {classNames} from "shared/lib/classNames/classNames";
 import cls from "./Sidebar.module.scss"
 import {ThemeSwitcher} from "widgets/ThemeSwitcher";
@@ -8,15 +8,25 @@ import {sidebarItemsList} from "../model/items";
 import {SidebarItem} from "./SidebarItem/SidebarItem";
 
 interface SideBarProps {
-	className?: string
+	className?: string,
+    isAuth?: boolean
 }
 
-export const Sidebar = memo(({className}: SideBarProps) => {
+export const Sidebar = memo(({className, isAuth}: SideBarProps) => {
     const [collapsed, setCollapsed] = useState(true);
 
     const onToggle = () => {
         setCollapsed(prev => !prev)
     }
+    
+    const sidebarItemsFiltered = useMemo(() => {
+        return sidebarItemsList.filter(item => {
+            if(item?.authOnly && !isAuth) {
+                return false
+            }
+            return true
+        })
+    }, [isAuth]);
 
     return (
         <div data-testid="sidebar" className={classNames(cls.Sidebar, {[cls.collapsed]: collapsed},
@@ -29,7 +39,7 @@ export const Sidebar = memo(({className}: SideBarProps) => {
                 {collapsed? "→" : "←"}
             </Button>
             <div className={cls.items}>
-                {sidebarItemsList.map((item) => {
+                {sidebarItemsFiltered.map((item) => {
                     return <SidebarItem item={item} collapsed={collapsed} key={item.path}/>
                 })}
             </div>

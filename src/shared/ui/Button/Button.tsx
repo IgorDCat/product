@@ -6,6 +6,7 @@ export enum ThemeButton {
     NORMAL = "normal",
 	CLEAR = "clear",
     OUTLINE = "outline",
+    OUTLINE_RED = "outline_red",
     COLLAPSE = "collapse"
 }
 
