@@ -1,21 +1,21 @@
-import webpack from "webpack"
-import {buildOptions} from "./types/config";
-import {buildCssLoader} from "./loaders/buildCssLoader";
+import webpack from 'webpack'
+import {buildOptions} from './types/config';
+import {buildCssLoader} from './loaders/buildCssLoader';
 
 export function buildLoaders(options: buildOptions): webpack.RuleSetRule[] {
 
     const svgLoader = {
         test: /\.svg$/,
-        use: ["@svgr/webpack"],
+        use: ['@svgr/webpack'],
     }
 
     const babelLoader =   {
         test: /\.(js|ts|tsx)$/,
         exclude: /node_modules/,
         use: {
-            loader: "babel-loader",
+            loader: 'babel-loader',
             options: {
-                presets: ["@babel/preset-env"]
+                presets: ['@babel/preset-env']
             }
         }
     }
@@ -24,14 +24,14 @@ export function buildLoaders(options: buildOptions): webpack.RuleSetRule[] {
         test: /\.(png|jpe?g|gif|woff2|woff)$/i,
         use: [
             {
-                loader: "file-loader",
+                loader: 'file-loader',
             },
         ],
     }
 
     const typescriptLoader = {
         test: /\.tsx?$/,
-        use: "ts-loader",
+        use: 'ts-loader',
         exclude: /node_modules/,
     }
 

@@ -1,11 +1,11 @@
-import React, {memo, useCallback, useState} from "react";
-import {classNames} from "shared/lib/classNames/classNames";
-import cls from "./Navbar.module.scss"
-import {Button, ThemeButton} from "shared/ui/Button/Button";
-import {useTranslation} from "react-i18next";
-import {LoginModal} from "features/AuthByUserName";
-import {useDispatch, useSelector} from "react-redux";
-import {getUserAuthData, userActions} from "entities/User";
+import React, {memo, useCallback, useState} from 'react';
+import {classNames} from 'shared/lib/classNames/classNames';
+import cls from './Navbar.module.scss'
+import {Button, ThemeButton} from 'shared/ui/Button/Button';
+import {useTranslation} from 'react-i18next';
+import {LoginModal} from 'features/AuthByUserName';
+import {useDispatch, useSelector} from 'react-redux';
+import {getUserAuthData, userActions} from 'entities/User';
 
 interface NavbarProps {
 	className?: string
@@ -33,7 +33,7 @@ export const Navbar = memo(({className}: NavbarProps) => {
         return (
             <div className={classNames(cls.Navbar, {}, [className])}>
                 <Button className={cls.btn} onClick={onLogout} theme={ThemeButton.CLEAR}>
-                    {t("Log-out")}
+                    {t('Log-out')}
                 </Button>
             </div>
         )
@@ -46,7 +46,7 @@ export const Navbar = memo(({className}: NavbarProps) => {
                 {isAuthModal && <LoginModal isOpen={isAuthModal} onClose={onCloseModal}/>}
             </div>
             <Button className={cls.btn} onClick={onOpenModal} theme={ThemeButton.CLEAR}>
-                {t("Log-in")}
+                {t('Log-in')}
             </Button>
         </div>
     )

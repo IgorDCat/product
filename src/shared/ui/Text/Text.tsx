@@ -1,16 +1,16 @@
-import React, {memo} from "react";
-import {classNames} from "shared/lib/classNames/classNames";
-import cls from "./Text.module.scss";
+import React, {memo} from 'react';
+import {classNames} from 'shared/lib/classNames/classNames';
+import cls from './Text.module.scss';
 
 export enum TextTheme {
-    NORMAL = "normal",
-    ERROR = "error"
+    NORMAL = 'normal',
+    ERROR = 'error'
 }
 
 export const enum TextAlign {
-    RIGHT= "right",
-    LEFT = "left",
-    CENTER = "center"
+    RIGHT= 'right',
+    LEFT = 'left',
+    CENTER = 'center'
 }
 
 interface TextProps {

@@ -1,16 +1,16 @@
-import React from "react";
-import {classNames} from "shared/lib/classNames/classNames";
-import cls from "./ProfileCard.module.scss";
-import {useTranslation} from "react-i18next";
-import {Input} from "shared/ui/Input/Input";
-import {Profile} from "entities/Profile";
-import {Loader} from "shared/ui/Loader/Loader";
-import {Text, TextAlign, TextTheme} from "shared/ui/Text/Text";
-import {Avatar} from "shared/ui/Avatar/Avatar";
-import {Currency} from "entities/Currency/model/types/currency";
-import {CurrencySelect} from "entities/Currency";
-import {Countries} from "entities/Country/model/country";
-import {CountrySelect} from "entities/Country";
+import React from 'react';
+import {classNames} from 'shared/lib/classNames/classNames';
+import cls from './ProfileCard.module.scss';
+import {useTranslation} from 'react-i18next';
+import {Input} from 'shared/ui/Input/Input';
+import {Profile} from 'entities/Profile';
+import {Loader} from 'shared/ui/Loader/Loader';
+import {Text, TextAlign, TextTheme} from 'shared/ui/Text/Text';
+import {Avatar} from 'shared/ui/Avatar/Avatar';
+import {Currency} from 'entities/Currency/model/types/currency';
+import {CurrencySelect} from 'entities/Currency';
+import {Countries} from 'entities/Country/model/country';
+import {CountrySelect} from 'entities/Country';
 
 interface ProfileCardProps {
     className?: string;
@@ -44,7 +44,7 @@ export const ProfileCard = (props: ProfileCardProps) => {
         onChangeCurrency,
         onChangeCountry
     } = props;
-    const {t} = useTranslation("profile");
+    const {t} = useTranslation('profile');
 
     if(isLoading) {
         return (
@@ -59,8 +59,8 @@ export const ProfileCard = (props: ProfileCardProps) => {
             <div className={classNames(cls.ProfileCard, {}, [className, cls.error])}>
                 <Text
                     theme={TextTheme.ERROR}
-                    title={t("Some error has occurred")}
-                    text={t("Try refresh the page")}
+                    title={t('Some error has occurred')}
+                    text={t('Try refresh the page')}
                     align={TextAlign.CENTER}
                 />
             </div>
@@ -70,44 +70,44 @@ export const ProfileCard = (props: ProfileCardProps) => {
     return (
         <div className={classNames(cls.ProfileCard, {}, [className])}>
 
-            <div>{data?.firstname + " " + data?.lastname}</div>
+            <div>{data?.firstname + ' ' + data?.lastname}</div>
             <div>
-                {data?.avatar && <Avatar src={data?.avatar || ""} size={300} alt=""/>}
+                {data?.avatar && <Avatar src={data?.avatar || ''} size={300} alt=""/>}
             </div>
 
             <div className={cls.data}>
                 <Input value={data?.firstname}
-                    placeholder={t("your firstname")}
+                    placeholder={t('Your firstname')}
                     className={cls.input}
                     onChange={onChangeFirstname}
                     readonly={readonly}
                 />
                 <Input value={data?.lastname}
-                    placeholder={t("your country")}
+                    placeholder={t('Your lastname')}
                     className={cls.input}
                     onChange={onChangeLastname}
                     readonly={readonly}
                 />
                 <Input value={data?.city}
-                    placeholder={t("your city")}
+                    placeholder={t('Your city')}
                     className={cls.input}
                     onChange={onChangeCity}
                     readonly={readonly}
                 />
                 <Input value={data?.age}
-                    placeholder={t("your age")}
+                    placeholder={t('Your age')}
                     className={cls.input}
                     onChange={onChangeAge}
                     readonly={readonly}
                 />
                 <Input value={data?.username}
-                    placeholder={t("enter your username")}
+                    placeholder={t('Enter your username')}
                     className={cls.input}
                     onChange={onChangeUsername}
                     readonly={readonly}
                 />
                 <Input value={data?.avatar}
-                    placeholder={t("your avatar link")}
+                    placeholder={t('Your avatar link')}
                     className={cls.input}
                     onChange={onChangeAvatar}
                     readonly={readonly}

@@ -1,11 +1,11 @@
-import React, {memo, useMemo, useState} from "react";
-import {classNames} from "shared/lib/classNames/classNames";
-import cls from "./Sidebar.module.scss"
-import {ThemeSwitcher} from "widgets/ThemeSwitcher";
-import {LangSwitcher} from "widgets/LangSwitcher/LangSwitcher";
-import {Button, ThemeButton} from "shared/ui/Button/Button";
-import {sidebarItemsList} from "../model/items";
-import {SidebarItem} from "./SidebarItem/SidebarItem";
+import React, {memo, useMemo, useState} from 'react';
+import {classNames} from 'shared/lib/classNames/classNames';
+import cls from './Sidebar.module.scss'
+import {ThemeSwitcher} from 'widgets/ThemeSwitcher';
+import {LangSwitcher} from 'widgets/LangSwitcher/LangSwitcher';
+import {Button, ThemeButton} from 'shared/ui/Button/Button';
+import {sidebarItemsList} from '../model/items';
+import {SidebarItem} from './SidebarItem/SidebarItem';
 
 interface SideBarProps {
 	className?: string,
@@ -36,7 +36,7 @@ export const Sidebar = memo(({className, isAuth}: SideBarProps) => {
                 className={cls.collapseBtn}
                 theme={ThemeButton.COLLAPSE}
                 onClick={onToggle}>
-                {collapsed? "→" : "←"}
+                {collapsed? '→' : '←'}
             </Button>
             <div className={cls.items}>
                 {sidebarItemsFiltered.map((item) => {

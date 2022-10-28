@@ -1,5 +1,5 @@
-import {FC} from "react";
-import {createPortal} from "react-dom";
+import {FC} from 'react';
+import {createPortal} from 'react-dom';
 
 interface PortalProps {
     targetElem?: HTMLElement;

@@ -4,5 +4,17 @@
   "Some error has occurred": "Some error has occurred",
   "Try refresh the page": "Try refresh the page",
   "Cancel": "Cancel",
-  "Save": "Save"
+  "Save": "Save",
+  "Server error": "Server error",
+  "No data": "No data",
+  "Incorrect age": "Incorrect age",
+  "Name and lastname is required": "Name and lastname is required",
+  "Your firstname": "Your firstname",
+  "Your lastname": "Your lastname",
+  "Your city": "Your city",
+  "Your age": "Your age",
+  "Enter your username": "Enter your username",
+  "Your avatar link": "Your avatar link",
+  "Your currency:": "Your currency:",
+  "Your country:": "Your country:"
 }

@@ -1,9 +1,9 @@
-import {ReactNode} from "react";
-import {render} from "@testing-library/react";
-import {I18nextProvider} from "react-i18next";
-import i18n from "shared/config/i18n/i18nForTests";
-import {MemoryRouter} from "react-router-dom";
-import {StateSchema, StoreProvider} from "app/providers/StoreProvider";
+import {ReactNode} from 'react';
+import {render} from '@testing-library/react';
+import {I18nextProvider} from 'react-i18next';
+import i18n from 'shared/config/i18n/i18nForTests';
+import {MemoryRouter} from 'react-router-dom';
+import {StateSchema, StoreProvider} from 'app/providers/StoreProvider';
 
 interface ComponentRenderOptions {
     route?: string
@@ -12,7 +12,7 @@ interface ComponentRenderOptions {
 
 export function ComponentRender(component: ReactNode, options: ComponentRenderOptions = {}) {
     const {
-        route = "/",
+        route = '/',
         initialState
     } = options
     return render(

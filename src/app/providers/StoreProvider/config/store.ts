@@ -1,12 +1,12 @@
-import {configureStore, Reducer, ReducersMapObject} from "@reduxjs/toolkit";
-import {StateSchema} from "../index";
-import {counterReducer} from "entities/Counter";
-import {userReducer} from "entities/User";
-import {createReducerManager} from "app/providers/StoreProvider/config/reducerManager";
-import {api} from "shared/api/api";
-import {NavigateOptions} from "react-router";
-import {To} from "history";
-import {CombinedState} from "redux";
+import {configureStore, Reducer, ReducersMapObject} from '@reduxjs/toolkit';
+import {StateSchema} from '../index';
+import {counterReducer} from 'entities/Counter';
+import {userReducer} from 'entities/User';
+import {createReducerManager} from 'app/providers/StoreProvider/config/reducerManager';
+import {api} from 'shared/api/api';
+import {NavigateOptions} from 'react-router';
+import {To} from 'history';
+import {CombinedState} from 'redux';
 
 export function createReduxStore(
     initialState?: StateSchema,
@@ -41,4 +41,4 @@ export function createReduxStore(
     return store;
 }
 
-export type AppDispatch =  ReturnType<typeof createReduxStore>["dispatch"]
+export type AppDispatch =  ReturnType<typeof createReduxStore>['dispatch']

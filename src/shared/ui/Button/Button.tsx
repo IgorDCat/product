@@ -1,16 +1,16 @@
-import React, {ButtonHTMLAttributes, FC, memo, ReactNode} from "react";
-import {classNames} from "shared/lib/classNames/classNames";
-import cls from "./Button.module.scss";
+import React, {ButtonHTMLAttributes, FC, memo, ReactNode} from 'react';
+import {classNames} from 'shared/lib/classNames/classNames';
+import cls from './Button.module.scss';
 
 export enum ThemeButton {
-    NORMAL = "normal",
-	CLEAR = "clear",
-    OUTLINE = "outline",
-    OUTLINE_RED = "outline_red",
-    COLLAPSE = "collapse"
+    NORMAL = 'normal',
+	CLEAR = 'clear',
+    OUTLINE = 'outline',
+    OUTLINE_RED = 'outline_red',
+    COLLAPSE = 'collapse'
 }
 
-type HTMLButtonProps = Omit<ButtonHTMLAttributes<HTMLButtonElement>, "disabled">
+type HTMLButtonProps = Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'disabled'>
 
 interface ButtonProps extends HTMLButtonProps{
 	className?: string;

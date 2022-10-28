@@ -1,14 +1,14 @@
-import React from "react";
-import { ComponentStory, ComponentMeta } from "@storybook/react";
-import { Theme } from "app/providers/themeProvider";
-import {ThemeDecorator} from "shared/config/storybook/ThemeDecorator";
-import ProfilePage from "./ProfilePage";
+import React from 'react';
+import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { Theme } from 'app/providers/themeProvider';
+import {ThemeDecorator} from 'shared/config/storybook/ThemeDecorator';
+import ProfilePage from './ProfilePage';
 
 export default {
-    title: "pages/ProfilePage",
+    title: 'pages/ProfilePage',
     component: ProfilePage,
     argTypes: {
-        backgroundColor: { control: "color" },
+        backgroundColor: { control: 'color' },
     },
 } as ComponentMeta<typeof ProfilePage>;
 

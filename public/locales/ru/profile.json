@@ -4,5 +4,17 @@
   "Some error has occurred": "Произошла какая-то ошибка",
   "Try refresh the page": "Попробуйте обновить страницу",
   "Cancel": "Отмена",
-  "Save": "Сохранить"
+  "Save": "Сохранить",
+  "Server error": "Ошибка сервера",
+  "No data": "Нет данных",
+  "Incorrect age": "Некорректный возраст",
+  "Name and lastname is required": "Имя и фамилия обязательны",
+  "Your firstname": "Ваше имя",
+  "Your lastname": "Ваша фамилия",
+  "Your city": "Ваш город",
+  "Your age": "Ваш возраст",
+  "Enter your username": "Введите имя пользователя",
+  "Your avatar link": "Ссылка на ваш аватар",
+  "Your currency:": "Ваша валюта:",
+  "Your country:": "Ваша страна:"
 }
