@@ -4,6 +4,7 @@ import {buildOptions} from './types/config';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import {BundleAnalyzerPlugin} from 'webpack-bundle-analyzer';
 import {getRandomInteger} from '../../src/helpers/getRandomInteger/getRandomInteger';
+import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin';
 
 export function buildPlugins(options: buildOptions): webpack.WebpackPluginInstance[] {
     const {paths, isDev, apiUrl, project} = options;
@@ -22,6 +23,7 @@ export function buildPlugins(options: buildOptions): webpack.WebpackPluginInstan
         }),
     ]
     if (isDev) {
+        plugins.push(new ReactRefreshWebpackPlugin())
         plugins.push(
             new BundleAnalyzerPlugin({
                 analyzerPort: getRandomInteger(4001, 4999),
