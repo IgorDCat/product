@@ -33,7 +33,7 @@ export const ProfileCard = (props: ProfileCardProps) => {
         className,
         data,
         isLoading,
-        error,
+        error = undefined,
         onChangeFirstname,
         onChangeLastname,
         readonly,
@@ -70,7 +70,6 @@ export const ProfileCard = (props: ProfileCardProps) => {
     return (
         <div className={classNames(cls.ProfileCard, {}, [className])}>
 
-            <div>{data?.firstname + ' ' + data?.lastname}</div>
             <div>
                 {data?.avatar && <Avatar src={data?.avatar || ''} size={300} alt=""/>}
             </div>

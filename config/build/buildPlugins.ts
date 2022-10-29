@@ -5,7 +5,9 @@ import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import {BundleAnalyzerPlugin} from 'webpack-bundle-analyzer';
 import {getRandomInteger} from '../../src/helpers/getRandomInteger/getRandomInteger';
 
-export function buildPlugins({paths, isDev, apiUrl}: buildOptions): webpack.WebpackPluginInstance[] {
+export function buildPlugins(options: buildOptions): webpack.WebpackPluginInstance[] {
+    const {paths, isDev, apiUrl, project} = options;
+
     const plugins = [
         new HtmlWebpackPlugin({template: paths.html}),
         new webpack.ProgressPlugin(),
@@ -16,19 +18,15 @@ export function buildPlugins({paths, isDev, apiUrl}: buildOptions): webpack.Webp
         new webpack.DefinePlugin({
             __IS_DEV__: JSON.stringify(isDev),
             __API__: JSON.stringify(apiUrl),
+            __PROJECT__: JSON.stringify(project),
         }),
-        new BundleAnalyzerPlugin({
-            analyzerPort: getRandomInteger(4001, 4999),
-            openAnalyzer: false
-        }),
-        new webpack.SourceMapDevToolPlugin({
-            filename: '[name].[contenthash:15].map'
-        })
-
     ]
     if (isDev) {
         plugins.push(
-
+            new BundleAnalyzerPlugin({
+                analyzerPort: getRandomInteger(4001, 4999),
+                openAnalyzer: false
+            }),
         )
     }
     return plugins;

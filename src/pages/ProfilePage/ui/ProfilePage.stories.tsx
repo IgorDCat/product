@@ -1,8 +1,10 @@
 import React from 'react';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { Theme } from 'app/providers/themeProvider';
-import {ThemeDecorator} from 'shared/config/storybook/ThemeDecorator';
-import ProfilePage from './ProfilePage';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator';
+import { Theme } from 'app/providers/ThemeProvider';
+import ProfilePage from 'pages/ProfilePage/ui/ProfilePage';
+import { StoreDecorator } from 'shared/config/storybook/StoreDecorator';
+import avatar from 'shared/assets/tests/storybook.jpg';
 
 export default {
     title: 'pages/ProfilePage',
@@ -14,13 +16,34 @@ export default {
 
 const Template: ComponentStory<typeof ProfilePage> = (args) => <ProfilePage {...args} />;
 
-export const Light = Template.bind({});
-Light.args = {
-    isStories: true
-};
+export const Normal = Template.bind({});
+Normal.args = {};
+Normal.decorators = [StoreDecorator({
+    profile: {
+        form: {
+            firstname: 'Igor',
+            lastname: 'Davydov',
+            age: 30,
+            city: 'Los-Angeles',
+            username: 'admin',
+            avatar
+        }
+    }
+})];
 
 export const Dark = Template.bind({});
-Dark.args = {
-    isStories: true
-};
-Dark.decorators = [ThemeDecorator(Theme.DARK)];
+Dark.args = {};
+Dark.decorators = [ThemeDecorator(Theme.DARK),
+    StoreDecorator({
+        profile: {
+            form: {
+                firstname: 'Igor',
+                lastname: 'Davydov',
+                age: 30,
+                city: 'Los-Angeles',
+                username: 'admin',
+                avatar
+            }
+        }
+    })
+];

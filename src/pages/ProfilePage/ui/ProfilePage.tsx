@@ -23,14 +23,13 @@ import {useTranslation} from 'react-i18next';
 
 interface ProfilePageProps {
     className?: string;
-    isStories?: boolean;
 }
 
 const reducers: ReducersList = {
     profile: profileReducer
 }
 
-const ProfilePage = ({className, isStories = false}: ProfilePageProps) => {
+const ProfilePage = ({className}: ProfilePageProps) => {
     const dispatch = useAppDispatch();
     const formData = useSelector(getProfileForm);
     const isLoading = useSelector(getProfileIsLoading);
@@ -40,10 +39,10 @@ const ProfilePage = ({className, isStories = false}: ProfilePageProps) => {
     const {t} = useTranslation('profile');
 
     useEffect(() => {
-        if (!isStories) {
+        if (__PROJECT__ !== 'storybook') {
             dispatch(fetchProfileData())
         }
-    }, [dispatch, isStories]);
+    }, [dispatch]);
 
     const validateErrorTranslates = {
         [ValidateProfileError.SERVER_ERROR]: t('Server error'),

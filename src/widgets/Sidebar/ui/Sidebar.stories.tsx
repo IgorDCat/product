@@ -1,8 +1,9 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { Theme } from 'app/providers/themeProvider';
+import { Theme } from 'app/providers/ThemeProvider';
 import {ThemeDecorator} from 'shared/config/storybook/ThemeDecorator';
 import {Sidebar} from './Sidebar';
+import {StoreDecorator} from 'shared/config/storybook/StoreDecorator';
 
 export default {
     title: 'widgets/Sidebar',
@@ -19,5 +20,24 @@ Light.args = {};
 
 export const Dark = Template.bind({});
 Dark.args = {};
-
 Dark.decorators = [ThemeDecorator(Theme.DARK)];
+
+export const LightAuth = Template.bind({});
+LightAuth.args = {
+    isAuth: true
+};
+LightAuth.decorators = [StoreDecorator({
+    user: {
+        authData: {}
+    }
+})];
+
+export const DarkAuth = Template.bind({});
+DarkAuth.args = {
+    isAuth: true
+};
+DarkAuth.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({
+    user: {
+        authData: {}
+    }
+})];
