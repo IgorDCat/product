@@ -1,11 +1,11 @@
 import React from 'react';
 import {ComponentStory, ComponentMeta} from '@storybook/react';
-import {Theme} from 'app/providers/themeProvider';
+import {Theme} from 'app/providers/ThemeProvider';
 import {ThemeDecorator} from 'shared/config/storybook/ThemeDecorator';
 import ArticlesPage from './ArticlesPage';
 
 export default {
-    title: 'folder/ArticlesPage',
+    title: 'pages/ArticlesPage',
     component: ArticlesPage,
     argTypes: {
         backgroundColor: {control: 'color'},

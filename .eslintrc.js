@@ -32,7 +32,7 @@ module.exports = {
         'react-hooks'
     ],
     'rules': {
-        'indent': ['error', 4],
+        'indent': ['error', 4, {'SwitchCase': 1}],
         'linebreak-style': 'off',
         'quotes': ['error', 'single'],
         'semi-style': ['error', 'last'],
