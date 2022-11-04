@@ -8,13 +8,15 @@ import {AxiosInstance} from 'axios';
 import {To} from 'history';
 import {NavigateOptions} from 'react-router';
 import {ArticleDetailsSchema} from 'entities/Article';
+import {ArticleDetailsCommentsSchema} from 'pages/ArticleDetailsPage'
 
 export interface StateSchema {
     counter: CounterSchema;
     user: UserSchema;
     loginForm?: LoginSchema;
     profile?: ProfileSchema;
-    articleDetails?: ArticleDetailsSchema
+    articleDetails?: ArticleDetailsSchema;
+    articleDetailsComments?: ArticleDetailsCommentsSchema;
 }
 
 export type StateSchemaKey = keyof StateSchema;

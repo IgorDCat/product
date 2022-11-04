@@ -10,7 +10,7 @@ import {useSelector} from 'react-redux';
 import {
     getArticleDetailsData, getArticleDetailsError, getArticleDetailsIsLoading
 } from '../../model/selectors/getArticleDetails';
-import {Text, TextAlign, TextSize, TextTheme} from 'shared/ui/Text/Text';
+import {TextCustom, TextAlign, TextSize, TextTheme} from 'shared/ui/Text/TextCustom';
 import {Skeleton} from 'shared/ui/Skeleton/Skeleton';
 import {Avatar} from 'shared/ui/Avatar/Avatar';
 import EyeIcon from 'shared/assets/icons/eye-icon.svg';
@@ -20,6 +20,7 @@ import {ArticleBlock, ArticleBlockType} from '../../model/types/article';
 import {ArticleCodeBlockComponent} from '../ArticleCodeBlockComponent/ArticleCodeBlockComponent';
 import {ArticleImageBlockComponent} from '../ArticleImageBlockComponent/ArticleImageBlockComponent';
 import {ArticleTextBlockComponent} from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
+import {useInitialEffect} from 'shared/lib/hooks/UseInitialEffect/UseInitialEffect';
 
 interface ArticleDetailsProps {
     className?: string;
@@ -41,19 +42,15 @@ export const ArticleDetails = memo(({className, id}: ArticleDetailsProps) => {
     const renderBlock = useCallback((block: ArticleBlock) => {
         switch(block.type) {
             case ArticleBlockType.CODE:
-                return <ArticleCodeBlockComponent block={block} className={cls.block}/>;
+                return <ArticleCodeBlockComponent block={block} className={cls.block} key={block.id}/>;
             case ArticleBlockType.IMAGE:
-                return <ArticleImageBlockComponent block={block} className={cls.block}/>;
+                return <ArticleImageBlockComponent block={block} className={cls.block} key={block.id}/>;
             case ArticleBlockType.TEXT:
-                return <ArticleTextBlockComponent block={block} className={cls.block}/>;
+                return <ArticleTextBlockComponent block={block} className={cls.block} key={block.id}/>;
         }
     }, []);
 
-    useEffect(() => {
-        if(__PROJECT__ !== 'storybook') {
-            dispatch(fetchArticleById(id))
-        }
-    }, [dispatch, id]);
+    useInitialEffect(() => dispatch(fetchArticleById(id)));
 
     let content;
 
@@ -69,7 +66,7 @@ export const ArticleDetails = memo(({className, id}: ArticleDetailsProps) => {
         )
     } else if(error) {
         content = (
-            <Text
+            <TextCustom
                 title={t('Some error has occurred')}
                 theme={TextTheme.ERROR}
                 align={TextAlign.CENTER}
@@ -81,7 +78,7 @@ export const ArticleDetails = memo(({className, id}: ArticleDetailsProps) => {
                 <div className={cls.avatarWrapper}>
                     <Avatar src={data?.img} size={200} className={cls.avatar}/>
                 </div>
-                <Text
+                <TextCustom
                     title={data?.title}
                     text={data?.subtitle}
                     className={cls.title}
@@ -89,11 +86,11 @@ export const ArticleDetails = memo(({className, id}: ArticleDetailsProps) => {
                 />
                 <div className={cls.articleInfo}>
                     <Icon Svg={EyeIcon}/>
-                    <Text text={String(data?.views)}/>
+                    <TextCustom text={String(data?.views)}/>
                 </div>
                 <div className={cls.articleInfo}>
                     <Icon Svg={CalendarIcon}/>
-                    <Text text={data?.createdAt}/>
+                    <TextCustom text={data?.createdAt}/>
                 </div>
                 {data?.blocks && data?.blocks.map(renderBlock)}
             </>

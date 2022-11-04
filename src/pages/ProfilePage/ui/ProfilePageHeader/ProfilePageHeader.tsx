@@ -3,7 +3,7 @@ import {classNames} from 'shared/lib/classNames/classNames';
 import cls from './ProfilePageHeader.module.scss';
 import {useTranslation} from 'react-i18next';
 import {Button, ThemeButton} from 'shared/ui/Button/Button';
-import {Text} from 'shared/ui/Text/Text';
+import {TextCustom} from 'shared/ui/Text/TextCustom';
 import {useSelector} from 'react-redux';
 import {getProfileReadonly, profileActions, updateProfileData} from 'entities/Profile';
 import {useAppDispatch} from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
@@ -31,7 +31,7 @@ export const ProfilePageHeader = ({className}: ProfilePageHeaderProps) => {
 
     return (
         <div className={classNames(cls.ProfilePageHeader, {}, [className])}>
-            <Text title={t('Profile')}/>
+            <TextCustom title={t('Profile')}/>
             {readonly ?
                 <Button theme={ThemeButton.OUTLINE} onClick={onEdit}>
                     {t('Edit')}

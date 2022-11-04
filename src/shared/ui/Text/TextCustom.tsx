@@ -27,7 +27,7 @@ interface TextProps {
     size?: TextSize;
 }
 
-export const Text = memo((props: TextProps) => {
+export const TextCustom = memo((props: TextProps) => {
     const {
         className,
         title,

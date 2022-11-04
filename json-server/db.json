@@ -106,7 +106,14 @@
     {
       "id": "1",
       "username": "admin",
-      "password": "123"
+      "password": "123",
+      "avatar": "https://pbs.twimg.com/profile_images/1538837176863039489/h3lHCMMF_400x400.jpg"
+    },
+    {
+      "id": "2",
+      "username": "user1",
+      "password": "123",
+      "avatar": "https://cs8.pikabu.ru/avatars/1323/x1323162-634231926.png"
     }
   ],
   "profile": {

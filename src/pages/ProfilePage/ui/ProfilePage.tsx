@@ -17,7 +17,7 @@ import {ProfilePageHeader} from './ProfilePageHeader/ProfilePageHeader';
 import {useAppDispatch} from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import {Currency} from 'entities/Currency';
 import {Countries} from 'entities/Country';
-import {Text, TextTheme} from 'shared/ui/Text/Text';
+import {TextCustom, TextTheme} from 'shared/ui/Text/TextCustom';
 import {ValidateProfileError} from 'entities/Profile/model/types/profile';
 import {useTranslation} from 'react-i18next';
 
@@ -88,7 +88,7 @@ const ProfilePage = ({className}: ProfilePageProps) => {
             <div className={classNames('', {}, [className])}>
                 <ProfilePageHeader/>
                 {validateErrors?.length && validateErrors.map((err: ValidateProfileError) => {
-                    return  <Text title={validateErrorTranslates[err]} theme={TextTheme.ERROR} key={err}/>
+                    return  <TextCustom title={validateErrorTranslates[err]} theme={TextTheme.ERROR} key={err}/>
                 })}
                 <ProfileCard
                     data={formData}
