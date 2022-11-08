@@ -20,6 +20,8 @@ import {Countries} from 'entities/Country';
 import {TextCustom, TextTheme} from 'shared/ui/Text/TextCustom';
 import {ValidateProfileError} from 'entities/Profile/model/types/profile';
 import {useTranslation} from 'react-i18next';
+import {useInitialEffect} from 'shared/lib/hooks/UseInitialEffect/UseInitialEffect';
+import {useParams} from 'react-router-dom';
 
 interface ProfilePageProps {
     className?: string;
@@ -37,12 +39,13 @@ const ProfilePage = ({className}: ProfilePageProps) => {
     const readonly = useSelector(getProfileReadonly);
     const validateErrors = useSelector(getProfileValidateErrors);
     const {t} = useTranslation('profile');
+    const {id} = useParams<{ id: string }>();
 
-    useEffect(() => {
-        if (__PROJECT__ !== 'storybook') {
-            dispatch(fetchProfileData())
+    useInitialEffect(() => {
+        if(id) {
+            dispatch(fetchProfileData(id));
         }
-    }, [dispatch]);
+    });
 
     const validateErrorTranslates = {
         [ValidateProfileError.SERVER_ERROR]: t('Server error'),

@@ -14,9 +14,38 @@ export default {
 
 const Template: ComponentStory<typeof CommentList> = (args) => <CommentList {...args} />;
 
+const comments = [
+    {
+        id: '1',
+        user: {
+            id: '1',
+            username: 'User1'
+        },
+        text: 'text of comment 1'
+    },
+    {
+        id: '2',
+        user: {
+            id: '2',
+            username: 'User2'
+        },
+        text: 'text of comment 2'
+    }
+]
+
 export const Light = Template.bind({});
-Light.args = {};
+Light.args = {
+    comments: comments
+};
 
 export const Dark = Template.bind({});
-Dark.args = {};
+Dark.args = {
+    comments: comments
+};
 Dark.decorators = [ThemeDecorator(Theme.DARK)];
+
+
+export const Loading = Template.bind({});
+Loading.args = {
+    isLoading: true
+};

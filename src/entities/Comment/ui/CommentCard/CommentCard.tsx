@@ -5,10 +5,12 @@ import {CommentType} from 'entities/Comment';
 import {Avatar} from 'shared/ui/Avatar/Avatar';
 import {TextCustom, TextSize} from 'shared/ui/Text/TextCustom';
 import {Skeleton} from 'shared/ui/Skeleton/Skeleton';
+import {AppLink} from 'shared/ui/AppLink/AppLink';
+import {RoutePath} from 'shared/config/routeConfig/routeConfig';
 
 interface CommentCardProps {
     className?: string;
-    comment: CommentType;
+    comment?: CommentType;
     isLoading?: boolean;
 }
 
@@ -28,11 +30,11 @@ export const CommentCard = memo(({className, comment, isLoading}: CommentCardPro
 
     return (
         <div className={classNames(cls.CommentCard, {}, [className])}>
-            <div className={cls.header}>
-                {comment.user.avatar && <Avatar size={30} src={comment.user.avatar}/>}
-                <TextCustom text={comment.user.username} size={TextSize.M}/>
-            </div>
-            <TextCustom text={comment.text}/>
+            <AppLink to={`${RoutePath.profile}${comment?.user.id}`} className={cls.header}>
+                {comment?.user.avatar && <Avatar size={30} src={comment?.user.avatar}/>}
+                <TextCustom text={comment?.user.username} size={TextSize.M}/>
+            </AppLink>
+            <TextCustom text={comment?.text}/>
         </div>
     );
 })
