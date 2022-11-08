@@ -24,7 +24,6 @@ Dark.decorators = [ThemeDecorator(Theme.DARK)];
 
 export const LightAuth = Template.bind({});
 LightAuth.args = {
-    isAuth: true
 };
 LightAuth.decorators = [StoreDecorator({
     user: {
@@ -34,7 +33,7 @@ LightAuth.decorators = [StoreDecorator({
 
 export const DarkAuth = Template.bind({});
 DarkAuth.args = {
-    isAuth: true
+
 };
 DarkAuth.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({
     user: {

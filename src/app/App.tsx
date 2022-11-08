@@ -23,7 +23,7 @@ export const App = () => {
             <div className={classNames('app', {}, [theme])}>
                 <Navbar/>
                 <div className="content-page">
-                    <Sidebar isAuth={isAuth}/>
+                    <Sidebar/>
                     {isInit && <AppRouter/>}
                 </div>
             </div>

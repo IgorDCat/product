@@ -12,7 +12,7 @@ import {useSelector} from 'react-redux';
 import {getArticleCommentsIsLoading} from '../model/selectors/getArticleComments';
 import {useInitialEffect} from 'shared/lib/hooks/UseInitialEffect/UseInitialEffect';
 import {useAppDispatch} from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
-import {fetchCommentsByArticleId} from 'pages/ArticleDetailsPage/model/services/fetchCommentsByArticleId';
+import {fetchCommentsByArticleId} from '../model/services/fetchCommentsByArticleId';
 import {AddCommentForm} from 'features/AddCommentForm';
 import {addCommentForArticle} from '../model/services/addCommentForArticle';
 
