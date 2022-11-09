@@ -5,7 +5,7 @@ import {ThemeDecorator} from 'shared/config/storybook/ThemeDecorator';
 import {Skeleton} from './Skeleton';
 
 export default {
-    title: 'folder/Skeleton',
+    title: 'shared/Skeleton',
     component: Skeleton,
     argTypes: {
         backgroundColor: {control: 'color'},

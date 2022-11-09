@@ -1,4 +1,4 @@
-import React, {memo, useCallback, useEffect} from 'react';
+import React, {memo, useCallback} from 'react';
 import {classNames} from 'shared/lib/classNames/classNames';
 import cls from './ArticleDetails.module.scss';
 import {useTranslation} from 'react-i18next';
@@ -10,7 +10,7 @@ import {useSelector} from 'react-redux';
 import {
     getArticleDetailsData, getArticleDetailsError, getArticleDetailsIsLoading
 } from '../../model/selectors/getArticleDetails';
-import {TextCustom, TextAlign, TextSize, TextTheme} from 'shared/ui/Text/TextCustom';
+import {TextAlign, TextCustom, TextSize, TextTheme} from 'shared/ui/Text/TextCustom';
 import {Skeleton} from 'shared/ui/Skeleton/Skeleton';
 import {Avatar} from 'shared/ui/Avatar/Avatar';
 import EyeIcon from 'shared/assets/icons/eye-icon.svg';
@@ -31,12 +31,14 @@ const reducers: ReducersList = {
     articleDetails: articleDetailsReducer
 }
 
-export const ArticleDetails = memo(({className, id}: ArticleDetailsProps) => {
+export const ArticleDetails = memo(({
+    className,
+    id
+}: ArticleDetailsProps) => {
     const {t} = useTranslation();
     const dispatch = useAppDispatch();
     const data = useSelector(getArticleDetailsData);
     const isLoading = useSelector(getArticleDetailsIsLoading);
-    //const isLoading = true;
     const error = useSelector(getArticleDetailsError);
 
     const renderBlock = useCallback((block: ArticleBlock) => {
@@ -55,53 +57,45 @@ export const ArticleDetails = memo(({className, id}: ArticleDetailsProps) => {
     let content;
 
     if(isLoading) {
-        content = (
-            <div className={cls.skelWrap}>
-                <Skeleton width={200} height={200} border='50%' className={cls.avatar}/>
-                <Skeleton width={700} height={32} className={cls.title}/>
-                <Skeleton width={400} height={26}/>
-                <Skeleton width='90vw' height={200}/>
-                <Skeleton width='90vw' height={200}/>
-            </div>
-        )
+        content = (<div className={cls.skelWrap}>
+            <Skeleton width={200} height={200} border='50%' className={cls.avatar}/>
+            <Skeleton width={700} height={32} className={cls.title}/>
+            <Skeleton width={400} height={26}/>
+            <Skeleton width='90vw' height={200}/>
+            <Skeleton width='90vw' height={200}/>
+        </div>)
     } else if(error) {
-        content = (
-            <TextCustom
-                title={t('Some error has occurred')}
-                theme={TextTheme.ERROR}
-                align={TextAlign.CENTER}
-            />
-        )
+        content = (<TextCustom
+            title={t('Some error has occurred')}
+            theme={TextTheme.ERROR}
+            align={TextAlign.CENTER}
+        />)
     } else {
-        content = (
-            <>
-                <div className={cls.avatarWrapper}>
-                    <Avatar src={data?.img} size={200} className={cls.avatar}/>
-                </div>
-                <TextCustom
-                    title={data?.title}
-                    text={data?.subtitle}
-                    className={cls.title}
-                    size={TextSize.L}
-                />
-                <div className={cls.articleInfo}>
-                    <Icon Svg={EyeIcon}/>
-                    <TextCustom text={String(data?.views)}/>
-                </div>
-                <div className={cls.articleInfo}>
-                    <Icon Svg={CalendarIcon}/>
-                    <TextCustom text={data?.createdAt}/>
-                </div>
-                {data?.blocks && data?.blocks.map(renderBlock)}
-            </>
-        )
+        content = (<>
+            <div className={cls.avatarWrapper}>
+                <Avatar src={data?.img} size={200} className={cls.avatar}/>
+            </div>
+            <TextCustom
+                title={data?.title}
+                text={data?.subtitle}
+                className={cls.title}
+                size={TextSize.L}
+            />
+            <div className={cls.articleInfo}>
+                <Icon Svg={EyeIcon}/>
+                <TextCustom text={String(data?.views)}/>
+            </div>
+            <div className={cls.articleInfo}>
+                <Icon Svg={CalendarIcon}/>
+                <TextCustom text={data?.createdAt}/>
+            </div>
+            {data?.blocks && data?.blocks.map(renderBlock)}
+        </>)
     }
 
-    return (
-        <DynamicModuleLoader reducers={reducers} removeAfterUnmount={true}>
-            <div className={classNames(cls.ArticleDetails, {}, [className])}>
-                {content}
-            </div>
-        </DynamicModuleLoader>
-    );
+    return (<DynamicModuleLoader reducers={reducers} removeAfterUnmount={true}>
+        <div className={classNames(cls.ArticleDetails, {}, [className])}>
+            {content}
+        </div>
+    </DynamicModuleLoader>);
 })

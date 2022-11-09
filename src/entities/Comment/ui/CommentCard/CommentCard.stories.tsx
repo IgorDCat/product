@@ -15,8 +15,26 @@ export default {
 const Template: ComponentStory<typeof CommentCard> = (args) => <CommentCard {...args} />;
 
 export const Light = Template.bind({});
-Light.args = {};
+Light.args = {
+    comment: {
+        id: '1',
+        user: {
+            id: '1',
+            username: 'user'
+        },
+        text: 'test comment 123'
+    }
+};
 
 export const Dark = Template.bind({});
-Dark.args = {};
+Dark.args = {
+    comment: {
+        id: '1',
+        user: {
+            id: '1',
+            username: 'user'
+        },
+        text: 'test comment 123'
+    }
+};
 Dark.decorators = [ThemeDecorator(Theme.DARK)];

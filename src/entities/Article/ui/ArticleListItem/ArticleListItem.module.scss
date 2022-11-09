@@ -1,0 +1,111 @@
+.BIG {
+    .header {
+        display: flex;
+        align-items: center;
+        margin-bottom: 8px;
+    }
+
+    .username {
+        margin-left: 10px;
+    }
+
+    .title {
+        margin-bottom: 8px;
+    }
+
+    .types {
+        margin-bottom: 8px;
+    }
+
+    .img {
+        width: 100%;
+        max-height: 250px;
+        margin-bottom: 10px;
+        object-fit: cover;
+    }
+
+    .date {
+        margin-left: auto;
+    }
+
+    .textBlock {
+        margin-bottom: 30px;
+        max-height: 200px;
+        overflow-y: hidden;
+    }
+
+    .footer {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .views {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
+}
+
+.SMALL {
+    width: 230px;
+    transition: 0.2s;
+    cursor: pointer;
+
+    .imageWrapper {
+        width: 200px;
+        height: 200px;
+        position: relative;
+        margin-bottom: 10px;
+    }
+
+    .img {
+        width: 200px;
+        height: 200px;
+    }
+
+    .date {
+        position: absolute;
+        right: 0;
+        top: 0;
+        visibility: hidden;
+    }
+
+    &:hover {
+        scale: 1.001;
+        opacity: 0.9;
+
+        .date {
+            visibility: visible;
+        }
+    }
+
+    .infoWrapper {
+        margin-top: 5px;
+        display: flex;
+        align-items: center;
+    }
+
+    .types p {
+        width: 130px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .views {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
+
+    .title {
+        margin-top: 5px;
+
+        & p {
+            width: 200px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    }
+}

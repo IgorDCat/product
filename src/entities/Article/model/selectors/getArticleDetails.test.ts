@@ -4,7 +4,11 @@ import {getArticleDetailsData, getArticleDetailsError, getArticleDetailsIsLoadin
 
 const data = {
     id: '1',
-    title: 'title'
+    title: 'title',
+    user: {
+        id: '1',
+        username: '124'
+    }
 }
 
 describe('getArticleDetailsData.test', () => {
