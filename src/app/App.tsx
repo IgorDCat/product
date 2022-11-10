@@ -11,7 +11,6 @@ import {getUserAuthData, getUserIsInit, userActions} from 'entities/User';
 export const App = () => {
     const {theme} = useTheme();
     const dispatch = useDispatch();
-    const isAuth = Boolean(useSelector(getUserAuthData));
     const isInit = useSelector(getUserIsInit)
 
     useEffect(() => {

@@ -1,16 +1,9 @@
-import React, {useCallback, useEffect} from 'react';
+import React, {useCallback} from 'react';
 import {classNames} from 'shared/lib/classNames/classNames';
 import {DynamicModuleLoader, ReducersList} from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import {
-    fetchProfileData,
-    getProfileError,
-    getProfileForm,
-    getProfileIsLoading,
-    getProfileReadonly,
-    getProfileValidateErrors,
-    profileActions,
-    ProfileCard,
-    profileReducer
+    fetchProfileData, getProfileError, getProfileForm, getProfileIsLoading, getProfileReadonly,
+    getProfileValidateErrors, profileActions, ProfileCard, profileReducer
 } from 'entities/Profile';
 import {useSelector} from 'react-redux';
 import {ProfilePageHeader} from './ProfilePageHeader/ProfilePageHeader';

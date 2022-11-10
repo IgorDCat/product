@@ -1,9 +1,5 @@
 import React from 'react';
 
-export interface Sidebar {
-
-}
-
 export interface SidebarItemsType {
     path: string;
     text: string;
