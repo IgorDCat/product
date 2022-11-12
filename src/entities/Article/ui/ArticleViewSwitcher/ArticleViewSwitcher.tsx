@@ -9,7 +9,7 @@ import {Icon} from 'shared/ui/Icon/Icon';
 
 interface ArticleViewSwitcherProps {
     className?: string;
-    view: ArticleView;
+    view?: ArticleView;
     onViewClick?: (newView: ArticleView) => void;
 }
 

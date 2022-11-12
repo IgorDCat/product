@@ -20,7 +20,7 @@ import {ArticleBlock, ArticleBlockType} from '../../model/types/article';
 import {ArticleCodeBlockComponent} from '../ArticleCodeBlockComponent/ArticleCodeBlockComponent';
 import {ArticleImageBlockComponent} from '../ArticleImageBlockComponent/ArticleImageBlockComponent';
 import {ArticleTextBlockComponent} from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
-import {useInitialEffect} from 'shared/lib/hooks/UseInitialEffect/UseInitialEffect';
+import {useInitialEffect} from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 
 interface ArticleDetailsProps {
     className?: string;

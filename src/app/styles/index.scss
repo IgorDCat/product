@@ -16,11 +16,3 @@
     position: fixed;
     width: 100vw;
 }
-
-.page-wrapper {
-    flex-grow: 1;
-    padding: 20px 50px;
-    height: calc(100vh - var(--navbar-height));
-    width: 100%;
-    overflow-y: auto;
-}
