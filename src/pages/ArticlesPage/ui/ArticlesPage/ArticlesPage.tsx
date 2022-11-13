@@ -7,13 +7,13 @@ import {DynamicModuleLoader, ReducersList} from 'shared/lib/components/DynamicMo
 import {articlePageActions, articlePageReducer, getArticles} from '../../model/slice/articlesPageSlice';
 import {useAppDispatch} from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import {useInitialEffect} from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
-import {fetchArticlesList} from '../../model/services/fetchArticlesList';
 import {useSelector} from 'react-redux';
 import {
     getArticlesPageError, getArticlesPageIsLoading, getArticlesPageView
 } from '../../model/selectors/articlesPageSelectors';
 import {Page} from 'shared/ui/Page/Page';
 import {fetchNextArticlesPage} from '../../model/services/fetchNextArticlesPage';
+import {initArticlesPage} from '../../model/services/initArticlesPage';
 
 interface ArticlesPageProps {
     className?: string;
@@ -33,10 +33,7 @@ const ArticlesPage = memo(({className}: ArticlesPageProps) => {
     const error = useSelector(getArticlesPageError);
 
     useInitialEffect(() => {
-        dispatch(articlePageActions.initState());
-        dispatch(fetchArticlesList({
-            page: 1
-        }));
+        dispatch(initArticlesPage());
     }, view);
 
     const onLoadNextPart = useCallback(() => {
@@ -48,7 +45,7 @@ const ArticlesPage = memo(({className}: ArticlesPageProps) => {
     }, [dispatch]);
 
     return (
-        <DynamicModuleLoader reducers={reducers}>
+        <DynamicModuleLoader reducers={reducers} removeAfterUnmount={false}>
             <Page className={classNames(cls.ArticlesPage, {}, [className])}
                 onScrollEnd={onLoadNextPart}
             >
