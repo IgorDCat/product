@@ -1,5 +1,5 @@
 import React, {memo, useCallback} from 'react';
-import {classNames, Mods} from 'shared/lib/classNames/classNames';
+import {classNames} from 'shared/lib/classNames/classNames';
 import cls from './ArticleViewSwitcher.module.scss';
 import {ArticleView} from '../../model/types/article';
 import ListIcon from 'shared/assets/icons/list.svg'

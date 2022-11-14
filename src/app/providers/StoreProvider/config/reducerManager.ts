@@ -36,7 +36,7 @@ export function createReducerManager(initialReducers: ReducersMapObject<StateSch
                 return
             }
             delete reducers[key];
-            mountedReducers[key] = true;
+            mountedReducers[key] = false;
             keysToRemove.push(key);
             combinedReducer = combineReducers(reducers);
         }

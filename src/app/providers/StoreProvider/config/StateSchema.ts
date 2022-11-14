@@ -5,16 +5,18 @@ import {AnyAction, EnhancedStore, Reducer, ReducersMapObject} from '@reduxjs/too
 import {CombinedState} from 'redux';
 import {ProfileSchema} from 'entities/Profile';
 import {AxiosInstance} from 'axios';
-import {To} from 'history';
-import {NavigateOptions} from 'react-router';
 import {ArticleDetailsSchema} from 'entities/Article';
 import {ArticleDetailsCommentsSchema} from 'pages/ArticleDetailsPage'
 import {AddCommentFormSchema} from 'features/AddCommentForm';
 import {ArticlesPageSchema} from 'pages/ArticlesPage';
+import {ScrollSaverSchema} from 'features/ScrollSaver';
 
 export interface StateSchema {
     counter: CounterSchema;
     user: UserSchema;
+    scrollSaver: ScrollSaverSchema;
+
+    // async reducers
     loginForm?: LoginSchema;
     profile?: ProfileSchema;
     articleDetails?: ArticleDetailsSchema;
