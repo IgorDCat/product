@@ -2,17 +2,17 @@ import React from 'react';
 import {ComponentStory, ComponentMeta} from '@storybook/react';
 import {Theme} from 'app/providers/ThemeProvider';
 import {ThemeDecorator} from 'shared/config/storybook/ThemeDecorator';
-import {ArticleViewSwitcher} from './ArticleViewSwitcher';
+import {ArticlePageFilters} from './ArticlePageFilters';
 
 export default {
-    title: 'entities/ArticleViewSwitcher',
-    component: ArticleViewSwitcher,
+    title: 'pages/ArticlePageFilters',
+    component: ArticlePageFilters,
     argTypes: {
         backgroundColor: {control: 'color'},
     },
-} as ComponentMeta<typeof ArticleViewSwitcher>;
+} as ComponentMeta<typeof ArticlePageFilters>;
 
-const Template: ComponentStory<typeof ArticleViewSwitcher> = (args) => <ArticleViewSwitcher {...args} />;
+const Template: ComponentStory<typeof ArticlePageFilters> = (args) => <ArticlePageFilters {...args} />;
 
 export const Light = Template.bind({});
 Light.args = {};

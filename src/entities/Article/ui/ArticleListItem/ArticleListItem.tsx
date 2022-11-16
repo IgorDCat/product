@@ -30,7 +30,6 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
             <Icon Svg={EyeIcon}/>
         </div>
     );
-    const title = <TextCustom title={article.title} className={cls.title}/>
     const date = <TextCustom text={article.createdAt} className={cls.date}/>
     const img = <img src={article.img} className={cls.img} alt={article.title}/>
 
@@ -51,7 +50,7 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
                     <TextCustom text={article.user.username} className={cls.username}/>
                     {date}
                 </div>
-                {title}
+                <TextCustom title={article.title} className={cls.title}/>
                 {types}
                 {img}
                 {textBlock &&
@@ -78,7 +77,7 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
                     {types}
                     {views}
                 </div>
-                {title}
+                <TextCustom text={article.title} className={cls.title}/>
             </Card>
         </div>
     );
