@@ -29,4 +29,5 @@
 *::-webkit-scrollbar-thumb {
     background-color: var(--navbar-color);
     border-radius: 3px;
+    border: var(--secondary-color) 1px solid;
 }

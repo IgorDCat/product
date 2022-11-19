@@ -42,9 +42,9 @@ server.post('/login', (req, res) => {
 // проверяем, авторизован ли пользователь
 // eslint-disable-next-line
 server.use((req, res, next) => {
-    // if (!req.headers.authorization) {
-    //     return res.status(403).json({ message: "AUTH ERROR" });
-    // }
+    if (!req.headers.authorization) {
+        return res.status(403).json({ message: 'AUTH ERROR' });
+    }
 
     next();
 });

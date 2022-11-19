@@ -24,5 +24,8 @@
   "by": "по",
   "date": "дате",
   "title": "названию",
-  "views": "просмотрам"
+  "views": "просмотрам",
+  "Editing an article with ID ": "Редактирование статьи с ID ",
+  "Creating a new article": "Создание новой статьи",
+  "Create a new article": "Создать новую статью"
 }

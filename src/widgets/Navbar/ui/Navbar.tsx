@@ -3,9 +3,11 @@ import {classNames} from 'shared/lib/classNames/classNames';
 import cls from './Navbar.module.scss'
 import {Button, ThemeButton} from 'shared/ui/Button/Button';
 import {useTranslation} from 'react-i18next';
-import {LoginModal} from '../../../features/AuthByUsername';
+import {LoginModal} from 'features/AuthByUsername';
 import {useDispatch, useSelector} from 'react-redux';
 import {getUserAuthData, userActions} from 'entities/User';
+import {AppLink} from 'shared/ui/AppLink/AppLink';
+import {RoutePath} from 'shared/config/routeConfig/routeConfig';
 
 interface NavbarProps {
 	className?: string
@@ -32,6 +34,9 @@ export const Navbar = memo(({className}: NavbarProps) => {
     if(authData) {
         return (
             <header className={classNames(cls.Navbar, {}, [className])}>
+                <AppLink to={RoutePath.article_create}>
+                    {t('Create a new article')} |
+                </AppLink>
                 <Button className={cls.btn} onClick={onLogout} theme={ThemeButton.CLEAR}>
                     {t('Log-out')}
                 </Button>

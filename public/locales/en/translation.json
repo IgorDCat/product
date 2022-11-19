@@ -24,5 +24,8 @@
   "by": "by",
   "date": "date",
   "title": "title",
-  "views": "views"
+  "views": "views",
+  "Editing an article with ID ": "Editing an article with ID ",
+  "Creating a new article": "Creating a new article",
+  "Create a new article": "Create a new article"
 }

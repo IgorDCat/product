@@ -4,4 +4,4 @@ export {ArticleDetailsRecommendationsSchema} from './model/types/articleDetailsR
 
 export {ArticleDetailsCommentsSchema} from './model/types/ArticleDetailsCommentsSchema';
 
-export {ArticleDetailsPageLazy as ArticleDetailsPage} from './ui/ArticleDetailsPageLazy';
+export {ArticleDetailsPageLazy as ArticleDetailsPage} from './ui/ArticleDetailsPage/ArticleDetailsPageLazy';
