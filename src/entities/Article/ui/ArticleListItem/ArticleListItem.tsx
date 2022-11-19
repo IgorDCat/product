@@ -1,4 +1,4 @@
-import React, {memo, useCallback} from 'react';
+import React, {HTMLAttributeAnchorTarget, memo} from 'react';
 import {classNames} from 'shared/lib/classNames/classNames';
 import cls from './ArticleListItem.module.scss';
 import {useTranslation} from 'react-i18next';
@@ -10,36 +10,37 @@ import {Card} from 'shared/ui/Card/Card';
 import {Avatar} from 'shared/ui/Avatar/Avatar';
 import {Button, ThemeButton} from 'shared/ui/Button/Button';
 import {ArticleTextBlockComponent} from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
-import {useNavigate} from 'react-router-dom';
 import {RoutePath} from 'shared/config/routeConfig/routeConfig';
+import {AppLink} from 'shared/ui/AppLink/AppLink';
 
 interface ArticleListItemProps {
     className?: string;
     article: Article;
     view: ArticleView;
+    target?: HTMLAttributeAnchorTarget;
 }
 
 export const ArticleListItem = memo((props: ArticleListItemProps) => {
-    const {className, article, view} = props;
+    const {
+        className,
+        article,
+        view,
+        target
+    } = props;
     const {t} = useTranslation();
-    const navigate = useNavigate();
     const types = <TextCustom text={article.type?.join(', ')} className={cls.types}/>
     const views = (
         <div className={cls.views}>
-            <TextCustom text={String(article.views)} />
+            <TextCustom text={String(article.views)}/>
             <Icon Svg={EyeIcon}/>
         </div>
     );
     const date = <TextCustom text={article.createdAt} className={cls.date}/>
     const img = <img src={article.img} className={cls.img} alt={article.title}/>
 
-    const onOpenArticle = useCallback(() => {
-        navigate(RoutePath.article_details + article.id)
-    }, [article.id, navigate]);
-
     if(view === ArticleView.BIG) {
         const textBlock = (article.blocks ?
-            article.blocks.find((block) => block.type === ArticleBlockType.TEXT) as ArticleTextBlock
+                article.blocks.find((block) => block.type === ArticleBlockType.TEXT) as ArticleTextBlock
             : null
         );
 
@@ -57,9 +58,11 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
                     <ArticleTextBlockComponent block={textBlock} className={cls.textBlock}/>
                 }
                 <div className={cls.footer}>
-                    <Button theme={ThemeButton.OUTLINE} onClick={onOpenArticle}>
-                        {t('Read more...')}
-                    </Button>
+                    <AppLink to={RoutePath.article_details + article.id} target={target}>
+                        <Button theme={ThemeButton.OUTLINE}>
+                            {t('Read more...')}
+                        </Button>
+                    </AppLink>
                     {views}
                 </div>
             </Card>
@@ -67,8 +70,12 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
     }
 
     return (
-        <div className={classNames(cls.ArticleListItem, {}, [className, cls[view]])}>
-            <Card className={cls.card} onClick={onOpenArticle}>
+        <AppLink
+            to={RoutePath.article_details + article.id}
+            target={target}
+            className={classNames(cls.ArticleListItem, {}, [className, cls[view]])}
+        >
+            <Card className={cls.card}>
                 <div className={cls.imageWrapper}>
                     {img}
                     {date}
@@ -79,6 +86,6 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
                 </div>
                 <TextCustom text={article.title} className={cls.title}/>
             </Card>
-        </div>
+        </AppLink>
     );
 })

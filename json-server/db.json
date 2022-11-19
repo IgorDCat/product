@@ -616,6 +616,18 @@
       "userId": "1",
       "text": "asdsdf",
       "id": "2Knj5Es"
+    },
+    {
+      "articleId": "7",
+      "userId": "1",
+      "text": "123",
+      "id": "bi4VWgK"
+    },
+    {
+      "articleId": "7",
+      "userId": "1",
+      "text": "comment 2",
+      "id": "okhVNbg"
     }
   ],
   "users": [
