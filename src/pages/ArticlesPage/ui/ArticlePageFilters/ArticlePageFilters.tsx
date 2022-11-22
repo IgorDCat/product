@@ -16,7 +16,6 @@ import {Input} from 'shared/ui/Input/Input';
 import {SortOrder} from 'shared/types';
 import {fetchArticlesList} from '../../model/services/fetchArticlesList';
 import {useDebounce} from 'shared/lib/hooks/useDebounce/useDebounce';
-import {TabItem} from 'shared/ui/Tabs/Tabs';
 
 interface ArticlePageFiltersProps {
     className?: string;

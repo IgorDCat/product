@@ -29,7 +29,8 @@ module.exports = {
         'react',
         '@typescript-eslint',
         'i18next',
-        'react-hooks'
+        'react-hooks',
+        'fsd-path-checker'
     ],
     'rules': {
         'indent': ['error', 4, {'SwitchCase': 1}],
@@ -46,7 +47,8 @@ module.exports = {
         'react-hooks/rules-of-hooks': 'error', // Checks rules of Hooks
         'react-hooks/exhaustive-deps': 'error', // Checks effect dependencies
         '@typescript-eslint/ban-ts-comment': 'off',
-        '@typescript-eslint/no-explicit-any': 'off'
+        '@typescript-eslint/no-explicit-any': 'off',
+        'fsd-path-checker/path-checker': 'error'
     },
     globals: {
         __IS_DEV__: true,

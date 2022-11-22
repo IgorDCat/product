@@ -1,6 +1,6 @@
 import {DeepPartial} from '@reduxjs/toolkit';
 import {StateSchema} from 'app/providers/StoreProvider';
-import {getProfileIsLoading} from 'entities/Profile';
+import {getProfileIsLoading} from './getProfileIsLoading';
 
 describe('getProfileIsLoading.test', () => {
     test('get isLoading', () => {

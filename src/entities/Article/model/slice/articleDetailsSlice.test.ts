@@ -1,7 +1,7 @@
 import {DeepPartial} from '@reduxjs/toolkit';
-import {ArticleDetailsSchema} from 'entities/Article';
-import {articleDetailsReducer} from 'entities/Article/model/slice/articleDetailsSlice';
-import {fetchArticleById} from 'entities/Article/model/services/fetchArticleById/fetchArticleById';
+import {fetchArticleById} from '../services/fetchArticleById/fetchArticleById';
+import {ArticleDetailsSchema} from '../types/articleDetailsSchema';
+import {articleDetailsReducer} from './articleDetailsSlice';
 
 const data = {
     id: '1',

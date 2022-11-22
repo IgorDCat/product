@@ -3,7 +3,7 @@ import {classNames} from 'shared/lib/classNames/classNames';
 import cls from './ProfileCard.module.scss';
 import {useTranslation} from 'react-i18next';
 import {Input} from 'shared/ui/Input/Input';
-import {Profile} from 'entities/Profile';
+import {Profile} from '../../model/types/profile';
 import {Loader} from 'shared/ui/Loader/Loader';
 import {TextCustom, TextAlign, TextTheme} from 'shared/ui/Text/TextCustom';
 import {Avatar} from 'shared/ui/Avatar/Avatar';

@@ -3,7 +3,7 @@ import {classNames} from 'shared/lib/classNames/classNames';
 import cls from './SidebarItem.module.scss';
 import {AppLink} from 'shared/ui/AppLink/AppLink';
 import {useTranslation} from 'react-i18next';
-import {SidebarItemsType} from 'widgets/Sidebar/model/types/sidebar';
+import {SidebarItemsType} from '../../model/types/sidebar';
 
 interface SidebarItemProps {
     item: SidebarItemsType;

@@ -1,6 +1,6 @@
 import {TestAsyncThunk} from 'shared/lib/tests/testAsyncThunk/testAsyncThunk';
 import {updateProfileData} from './updateProfileData';
-import {ValidateProfileError} from 'entities/Profile/model/types/profile';
+import {ValidateProfileError} from '../../types/profile';
 
 const data = {
     id: '1',

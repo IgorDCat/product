@@ -1,4 +1,4 @@
-import {SidebarItemsType} from 'widgets/Sidebar/model/types/sidebar';
+import {SidebarItemsType} from '../types/sidebar';
 import {RoutePath} from 'shared/config/routeConfig/routeConfig';
 import MainPageIcon from 'shared/assets/icons/main-page.svg';
 import AboutPageIcon from 'shared/assets/icons/about-page.svg';

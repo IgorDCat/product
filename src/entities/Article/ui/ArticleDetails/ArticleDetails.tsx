@@ -1,26 +1,26 @@
 import React, {memo, useCallback} from 'react';
-import {classNames} from 'shared/lib/classNames/classNames';
-import cls from './ArticleDetails.module.scss';
 import {useTranslation} from 'react-i18next';
-import {DynamicModuleLoader, ReducersList} from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
-import {articleDetailsReducer} from '../../model/slice/articleDetailsSlice';
-import {useAppDispatch} from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
-import {fetchArticleById} from 'entities/Article/model/services/fetchArticleById/fetchArticleById';
 import {useSelector} from 'react-redux';
+import CalendarIcon from 'shared/assets/icons/calendar-icon.svg';
+import EyeIcon from 'shared/assets/icons/eye-icon.svg';
+import {classNames} from 'shared/lib/classNames/classNames';
+import {DynamicModuleLoader, ReducersList} from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import {useAppDispatch} from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
+import {useInitialEffect} from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
+import {Avatar} from 'shared/ui/Avatar/Avatar';
+import {Icon} from 'shared/ui/Icon/Icon';
+import {Skeleton} from 'shared/ui/Skeleton/Skeleton';
+import {TextAlign, TextCustom, TextSize, TextTheme} from 'shared/ui/Text/TextCustom';
 import {
     getArticleDetailsData, getArticleDetailsError, getArticleDetailsIsLoading
 } from '../../model/selectors/getArticleDetails';
-import {TextAlign, TextCustom, TextSize, TextTheme} from 'shared/ui/Text/TextCustom';
-import {Skeleton} from 'shared/ui/Skeleton/Skeleton';
-import {Avatar} from 'shared/ui/Avatar/Avatar';
-import EyeIcon from 'shared/assets/icons/eye-icon.svg';
-import CalendarIcon from 'shared/assets/icons/calendar-icon.svg';
-import {Icon} from 'shared/ui/Icon/Icon';
+import {fetchArticleById} from '../../model/services/fetchArticleById/fetchArticleById';
+import {articleDetailsReducer} from '../../model/slice/articleDetailsSlice';
 import {ArticleBlock, ArticleBlockType} from '../../model/types/article';
 import {ArticleCodeBlockComponent} from '../ArticleCodeBlockComponent/ArticleCodeBlockComponent';
 import {ArticleImageBlockComponent} from '../ArticleImageBlockComponent/ArticleImageBlockComponent';
 import {ArticleTextBlockComponent} from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
-import {useInitialEffect} from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
+import cls from './ArticleDetails.module.scss';
 
 interface ArticleDetailsProps {
     className?: string;

@@ -4,7 +4,7 @@ import cls from './CommentList.module.scss';
 import {TextCustom} from 'shared/ui/Text/TextCustom'
 import {useTranslation} from 'react-i18next';
 import {CommentCard} from '../CommentCard/CommentCard';
-import {CommentType} from 'entities/Comment';
+import {CommentType} from '../../model/types/comment';
 
 interface CommentListProps {
     className?: string;
