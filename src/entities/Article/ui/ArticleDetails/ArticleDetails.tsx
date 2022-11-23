@@ -10,6 +10,7 @@ import {useInitialEffect} from 'shared/lib/hooks/useInitialEffect/useInitialEffe
 import {Avatar} from 'shared/ui/Avatar/Avatar';
 import {Icon} from 'shared/ui/Icon/Icon';
 import {Skeleton} from 'shared/ui/Skeleton/Skeleton';
+import {HStack} from 'shared/ui/Stack';
 import {TextAlign, TextCustom, TextSize, TextTheme} from 'shared/ui/Text/TextCustom';
 import {
     getArticleDetailsData, getArticleDetailsError, getArticleDetailsIsLoading
@@ -57,7 +58,7 @@ export const ArticleDetails = memo(({
     let content;
 
     if(isLoading) {
-        content = (<div className={cls.skelWrap}>
+        content = (<div>
             <Skeleton width={200} height={200} border='50%' className={cls.avatar}/>
             <Skeleton width={700} height={32} className={cls.title}/>
             <Skeleton width={400} height={26}/>
@@ -72,29 +73,29 @@ export const ArticleDetails = memo(({
         />)
     } else {
         content = (<>
-            <div className={cls.avatarWrapper}>
+            <HStack justify='center' max>
                 <Avatar src={data?.img} size={200} className={cls.avatar}/>
-            </div>
+            </HStack>
             <TextCustom
                 title={data?.title}
                 text={data?.subtitle}
                 className={cls.title}
                 size={TextSize.L}
             />
-            <div className={cls.articleInfo}>
+            <HStack align='center' gap='5'>
                 <Icon Svg={EyeIcon}/>
                 <TextCustom text={String(data?.views)}/>
-            </div>
-            <div className={cls.articleInfo}>
+            </HStack>
+            <HStack align='center' gap='5'>
                 <Icon Svg={CalendarIcon}/>
                 <TextCustom text={data?.createdAt}/>
-            </div>
+            </HStack>
             {data?.blocks && data?.blocks.map(renderBlock)}
         </>)
     }
 
     return (<DynamicModuleLoader reducers={reducers}>
-        <div className={classNames(cls.ArticleDetails, {}, [className])}>
+        <div className={classNames('', {}, [className])}>
             {content}
         </div>
     </DynamicModuleLoader>);

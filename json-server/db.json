@@ -570,34 +570,10 @@
       "userId": "1"
     },
     {
-      "id": "2",
-      "text": "some comment 2",
-      "articleId": "1",
-      "userId": "1"
-    },
-    {
-      "id": "3",
-      "text": "some comment 3",
-      "articleId": "1",
-      "userId": "1"
-    },
-    {
       "articleId": "1",
       "userId": "1",
       "text": "123123123",
       "id": "bJtgcGH"
-    },
-    {
-      "articleId": "1",
-      "userId": "2",
-      "text": "qwerty123",
-      "id": "a8OQnle"
-    },
-    {
-      "articleId": "1",
-      "userId": "2",
-      "text": "sdfggff",
-      "id": "OsTY14J"
     },
     {
       "articleId": "2",

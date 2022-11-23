@@ -1,5 +1,6 @@
 import React, {memo} from 'react';
 import {classNames} from 'shared/lib/classNames/classNames';
+import {VStack} from 'shared/ui/Stack';
 import cls from './CommentList.module.scss';
 import {TextCustom} from 'shared/ui/Text/TextCustom'
 import {useTranslation} from 'react-i18next';
@@ -18,7 +19,7 @@ export const CommentList = memo((props: CommentListProps) => {
 
     if(isLoading) {
         return (
-            <div className={classNames(cls.CommentList, {}, [className, cls.loading])}>
+            <div className={classNames('', {}, [className, cls.loading])}>
                 <CommentCard isLoading/>
                 <CommentCard isLoading/>
                 <CommentCard isLoading/>
@@ -27,7 +28,7 @@ export const CommentList = memo((props: CommentListProps) => {
     }
 
     return (
-        <div className={classNames(cls.CommentList, {}, [className])}>
+        <VStack gap='16' max className={classNames('', {}, [className])}>
             {comments?.length
                 ? comments.map(comm =>
                     <CommentCard
@@ -38,6 +39,6 @@ export const CommentList = memo((props: CommentListProps) => {
                     />)
                 : <TextCustom text={t('No comments')}/>
             }
-        </div>
+        </VStack>
     );
 })

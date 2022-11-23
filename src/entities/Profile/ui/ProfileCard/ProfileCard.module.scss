@@ -1,22 +1,16 @@
 .ProfileCard {
-    padding: 20px;
     border: var(--secondary-color) 2px solid;
-}
-
-.data {
-    margin-top: 30px;
-    display: flex;
-    flex-direction: column;
-}
-
-.input {
-    margin-top: 10px;
 }
 
 .loading,
 .error {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     height: 300px;
+}
+
+.avatar {
+    margin-top: 10px;
+}
+
+.info {
+    margin: 16px;
 }

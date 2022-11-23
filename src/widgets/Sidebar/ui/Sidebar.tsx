@@ -1,5 +1,6 @@
 import React, {memo, useState} from 'react';
 import {classNames} from 'shared/lib/classNames/classNames';
+import {VStack} from 'shared/ui/Stack';
 import cls from './Sidebar.module.scss'
 import {ThemeSwitcher} from 'widgets/ThemeSwitcher';
 import {LangSwitcher} from 'widgets/LangSwitcher/LangSwitcher';
@@ -30,11 +31,11 @@ export const Sidebar = memo(({className}: SideBarProps) => {
                 onClick={onToggle}>
                 {collapsed? '→' : '←'}
             </Button>
-            <div className={cls.items}>
+            <VStack gap='10' className={cls.items}>
                 {sidebarItemsList.map((item) => {
                     return <SidebarItem item={item} collapsed={collapsed} key={item.path}/>
                 })}
-            </div>
+            </VStack>
             <div className={cls.switchers}>
                 <ThemeSwitcher/>
                 <LangSwitcher short={collapsed}/>

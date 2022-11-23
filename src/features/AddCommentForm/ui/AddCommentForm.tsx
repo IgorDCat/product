@@ -1,5 +1,6 @@
 import React, {memo, useCallback} from 'react';
 import {classNames} from 'shared/lib/classNames/classNames';
+import {HStack} from 'shared/ui/Stack';
 import cls from './AddCommentForm.module.scss';
 import {useTranslation} from 'react-i18next';
 import {Input, ThemeInput} from 'shared/ui/Input/Input';
@@ -37,7 +38,9 @@ const AddCommentForm = memo((props: AddCommentFormProps) => {
 
     return (
         <DynamicModuleLoader reducers={reducers}>
-            <div className={classNames(cls.AddCommentForm, {}, [className])}>
+            <HStack justify='between' gap='10' max
+                className={classNames(cls.AddCommentForm, {}, [className])}
+            >
                 <Input
                     className={cls.input}
                     theme={ThemeInput.CLEAR}
@@ -48,10 +51,11 @@ const AddCommentForm = memo((props: AddCommentFormProps) => {
                 <Button
                     theme={ThemeButton.OUTLINE}
                     onClick={onSendHandler}
+                    className={cls.btn}
                 >
                     {t('Send')}
                 </Button>
-            </div>
+            </HStack>
         </DynamicModuleLoader>
     );
 })

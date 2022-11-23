@@ -1,6 +1,6 @@
 import React, {memo, useCallback} from 'react';
 import {classNames} from 'shared/lib/classNames/classNames';
-import cls from './ArticleDetailsPageHeader.module.scss';
+import {HStack} from 'shared/ui/Stack';
 import {useTranslation} from 'react-i18next';
 import {Button, ThemeButton} from 'shared/ui/Button/Button';
 import {RoutePath} from 'shared/config/routeConfig/routeConfig';
@@ -29,13 +29,13 @@ export const ArticleDetailsPageHeader = memo((props: ArticleDetailsPageHeaderPro
     }, [article?.id, navigate]);
 
     return (
-        <div className={classNames(cls.ArticleDetailsPageHeader, {}, [className])}>
+        <HStack justify='between' max className={classNames('', {}, [className])}>
             <Button theme={ThemeButton.OUTLINE} onClick={backToList}>
                 {t('< Back to list')}
             </Button>
-            {canEdit && <Button theme={ThemeButton.OUTLINE} onClick={onEditArticle} className={cls.editBtn}>
+            {canEdit && <Button theme={ThemeButton.OUTLINE} onClick={onEditArticle}>
                 {t('Edit')}
             </Button>}
-        </div>
+        </HStack>
     );
 })
