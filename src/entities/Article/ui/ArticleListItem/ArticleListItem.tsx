@@ -3,7 +3,7 @@ import {classNames} from 'shared/lib/classNames/classNames';
 import cls from './ArticleListItem.module.scss';
 import {useTranslation} from 'react-i18next';
 import {Article, ArticleBlockType, ArticleTextBlock, ArticleView} from '../../model/types/article';
-import {TextCustom} from 'shared/ui/Text/TextCustom';
+import {Text} from 'shared/ui/Text/Text';
 import {Icon} from 'shared/ui/Icon/Icon';
 import EyeIcon from 'shared/assets/icons/eye-icon.svg'
 import {Card} from 'shared/ui/Card/Card';
@@ -28,14 +28,14 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
         target
     } = props;
     const {t} = useTranslation();
-    const types = <TextCustom text={article.type?.join(', ')} className={cls.types}/>
+    const types = <Text text={article.type?.join(', ')} className={cls.types}/>
     const views = (
         <div className={cls.views}>
-            <TextCustom text={String(article.views)}/>
+            <Text text={String(article.views)}/>
             <Icon Svg={EyeIcon}/>
         </div>
     );
-    const date = <TextCustom text={article.createdAt} className={cls.date}/>
+    const date = <Text text={article.createdAt} className={cls.date}/>
     const img = <img src={article.img} className={cls.img} alt={article.title}/>
 
     if(view === ArticleView.BIG) {
@@ -48,10 +48,10 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
             <Card className={classNames(cls.card, {}, [className, cls[view]])}>
                 <div className={cls.header}>
                     <Avatar src={article.user.avatar} size={30}/>
-                    <TextCustom text={article.user.username} className={cls.username}/>
+                    <Text text={article.user.username} className={cls.username}/>
                     {date}
                 </div>
-                <TextCustom title={article.title} className={cls.title}/>
+                <Text title={article.title} className={cls.title}/>
                 {types}
                 {img}
                 {textBlock &&
@@ -84,7 +84,7 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
                     {types}
                     {views}
                 </div>
-                <TextCustom text={article.title} className={cls.title}/>
+                <Text text={article.title} className={cls.title}/>
             </Card>
         </AppLink>
     );

@@ -4,7 +4,7 @@ import cls from './ArticleList.module.scss';
 import {Article, ArticleView} from '../../model/types/article';
 import {ArticleListItem} from '../ArticleListItem/ArticleListItem';
 import {ArticleListItemSkeleton} from '../ArticleListItem/ArticleListItemSkeleton';
-import {TextCustom} from 'shared/ui/Text/TextCustom';
+import {Text} from 'shared/ui/Text/Text';
 import {useTranslation} from 'react-i18next';
 
 interface ArticleListProps {
@@ -27,7 +27,7 @@ export const ArticleList = memo((props: ArticleListProps) => {
 
     if(!isLoading && !articles.length) {
         return (
-            <TextCustom title={t('Articles no found')}/>
+            <Text title={t('Articles no found')}/>
         );
     }
 

@@ -2,17 +2,14 @@ import React, {useCallback} from 'react';
 import {useTranslation} from 'react-i18next';
 import {Button, ThemeButton} from 'shared/ui/Button/Button';
 import {HStack} from 'shared/ui/Stack';
-import {TextCustom} from 'shared/ui/Text/TextCustom';
+import {Text} from 'shared/ui/Text/Text';
 import {useSelector} from 'react-redux';
 import {getProfileData, getProfileReadonly, profileActions, updateProfileData} from 'entities/Profile';
 import {useAppDispatch} from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import {getUserAuthData} from 'entities/User';
 
-interface ProfilePageHeaderProps {
-    className?: string;
-}
 
-export const ProfilePageHeader = ({className}: ProfilePageHeaderProps) => {
+export const ProfilePageHeader = () => {
     const {t} = useTranslation('profile');
     const authData = useSelector(getUserAuthData);
     const profileData = useSelector(getProfileData);
@@ -34,7 +31,7 @@ export const ProfilePageHeader = ({className}: ProfilePageHeaderProps) => {
 
     return (
         <HStack justify={'between'} max>
-            <TextCustom title={t('Profile')}/>
+            <Text title={t('Profile')}/>
             {canEdit &&
             <div>
                 {readonly ?

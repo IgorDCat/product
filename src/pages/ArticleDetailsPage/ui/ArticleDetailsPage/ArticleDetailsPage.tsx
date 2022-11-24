@@ -5,7 +5,7 @@ import cls from './ArticleDetailsPage.module.scss';
 import {useTranslation} from 'react-i18next';
 import {ArticleDetails, ArticleList} from 'entities/Article';
 import {useParams} from 'react-router-dom';
-import {TextCustom} from 'shared/ui/Text/TextCustom';
+import {Text} from 'shared/ui/Text/Text';
 import {CommentList} from 'entities/Comment';
 import {DynamicModuleLoader, ReducersList} from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import {getArticleComments} from '../../model/slices/articleDetailsCommentSlice';
@@ -63,14 +63,14 @@ const ArticleDetailsPage = memo(({className}: ArticleDetailsPageProps) => {
                 <VStack gap='16' max>
                     <ArticleDetailsPageHeader/>
                     <ArticleDetails id={id}/>
-                    <TextCustom title={t('Recommended')} className={cls.commentsTitle}/>
+                    <Text title={t('Recommended')} className={cls.commentsTitle}/>
                     <ArticleList
                         articles={recommendations}
                         isLoading={recommendationsIsLoading}
                         className={cls.recommendations}
                         target='_blank'
                     />
-                    <TextCustom title={t('Comments')} className={cls.commentsTitle}/>
+                    <Text title={t('Comments')} className={cls.commentsTitle}/>
                     <AddCommentForm onSendComment={onSendComment}/>
                     <CommentList comments={comments} isLoading={commentsIsLoading}/>
                 </VStack>

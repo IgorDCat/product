@@ -11,7 +11,7 @@ import {ProfilePageHeader} from './ProfilePageHeader/ProfilePageHeader';
 import {useAppDispatch} from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import {Currency} from 'entities/Currency';
 import {Countries} from 'entities/Country';
-import {TextCustom, TextTheme} from 'shared/ui/Text/TextCustom';
+import {Text, TextTheme} from 'shared/ui/Text/Text';
 import {ValidateProfileError} from 'entities/Profile/model/types/profile';
 import {useTranslation} from 'react-i18next';
 import {useInitialEffect} from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
@@ -87,7 +87,7 @@ const ProfilePage = ({className}: ProfilePageProps) => {
                 <VStack gap={'16'} max>
                     <ProfilePageHeader/>
                     {validateErrors?.length && validateErrors.map((err: ValidateProfileError) => {
-                        return <TextCustom title={validateErrorTranslates[err]} theme={TextTheme.ERROR} key={err}/>
+                        return <Text title={validateErrorTranslates[err]} theme={TextTheme.ERROR} key={err}/>
                     })}
                     <ProfileCard
                         data={formData}

@@ -2,17 +2,17 @@ import React from 'react';
 import {ComponentMeta, ComponentStory} from '@storybook/react';
 import {Theme} from 'app/providers/ThemeProvider';
 import {ThemeDecorator} from 'shared/config/storybook/ThemeDecorator';
-import {TextCustom, TextSize, TextTheme} from './TextCustom';
+import {Text, TextSize, TextTheme} from './Text';
 
 export default {
     title: 'shared/Text',
-    component: TextCustom,
+    component: Text,
     argTypes: {
         backgroundColor: { control: 'color' },
     },
-} as ComponentMeta<typeof TextCustom>;
+} as ComponentMeta<typeof Text>;
 
-const Template: ComponentStory<typeof TextCustom> = (args) => <TextCustom {...args} />;
+const Template: ComponentStory<typeof Text> = (args) => <Text {...args} />;
 
 export const Light = Template.bind({});
 Light.args = {
@@ -47,4 +47,16 @@ SizeL.args = {
     title: 'Text of title',
     text: 'Text of description',
     size: TextSize.L
+};
+export const SizeM = Template.bind({});
+SizeM.args = {
+    title: 'Text of title',
+    text: 'Text of description',
+    size: TextSize.M
+};
+export const SizeS = Template.bind({});
+SizeS.args = {
+    title: 'Text of title',
+    text: 'Text of description',
+    size: TextSize.S
 };

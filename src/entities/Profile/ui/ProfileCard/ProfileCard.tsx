@@ -6,7 +6,7 @@ import {useTranslation} from 'react-i18next';
 import {Input} from 'shared/ui/Input/Input';
 import {Profile} from '../../model/types/profile';
 import {Loader} from 'shared/ui/Loader/Loader';
-import {TextCustom, TextAlign, TextTheme} from 'shared/ui/Text/TextCustom';
+import {Text, TextAlign, TextTheme} from 'shared/ui/Text/Text';
 import {Avatar} from 'shared/ui/Avatar/Avatar';
 import {Currency} from 'entities/Currency/model/types/currency';
 import {CurrencySelect} from 'entities/Currency';
@@ -62,7 +62,7 @@ export const ProfileCard = (props: ProfileCardProps) => {
     if(error) {
         return (
             <HStack max className={classNames(cls.ProfileCard, {}, [className, cls.error])}>
-                <TextCustom
+                <Text
                     theme={TextTheme.ERROR}
                     title={t('Some error has occurred')}
                     text={t('Try refresh the page')}

@@ -3,7 +3,7 @@ import {ComponentStory, ComponentMeta} from '@storybook/react';
 import {Theme} from 'app/providers/ThemeProvider';
 import {ThemeDecorator} from 'shared/config/storybook/ThemeDecorator';
 import {Card} from './Card';
-import {TextCustom} from '../Text/TextCustom';
+import {Text} from '../Text/Text';
 
 export default {
     title: 'shared/Card',
@@ -17,11 +17,11 @@ const Template: ComponentStory<typeof Card> = (args) => <Card {...args} />;
 
 export const Light = Template.bind({});
 Light.args = {
-    children: <TextCustom title={'Text'} text={'Test text'}/>
+    children: <Text title={'Text'} text={'Test text'}/>
 };
 
 export const Dark = Template.bind({});
 Dark.args = {
-    children: <TextCustom title={'Text'} text={'Test text'}/>
+    children: <Text title={'Text'} text={'Test text'}/>
 };
 Dark.decorators = [ThemeDecorator(Theme.DARK)];

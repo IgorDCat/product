@@ -11,7 +11,7 @@ import {Avatar} from 'shared/ui/Avatar/Avatar';
 import {Icon} from 'shared/ui/Icon/Icon';
 import {Skeleton} from 'shared/ui/Skeleton/Skeleton';
 import {HStack} from 'shared/ui/Stack';
-import {TextAlign, TextCustom, TextSize, TextTheme} from 'shared/ui/Text/TextCustom';
+import {TextAlign, Text, TextSize, TextTheme} from 'shared/ui/Text/Text';
 import {
     getArticleDetailsData, getArticleDetailsError, getArticleDetailsIsLoading
 } from '../../model/selectors/getArticleDetails';
@@ -66,7 +66,7 @@ export const ArticleDetails = memo(({
             <Skeleton width='90vw' height={200}/>
         </div>)
     } else if(error) {
-        content = (<TextCustom
+        content = (<Text
             title={t('Some error has occurred')}
             theme={TextTheme.ERROR}
             align={TextAlign.CENTER}
@@ -76,7 +76,7 @@ export const ArticleDetails = memo(({
             <HStack justify='center' max>
                 <Avatar src={data?.img} size={200} className={cls.avatar}/>
             </HStack>
-            <TextCustom
+            <Text
                 title={data?.title}
                 text={data?.subtitle}
                 className={cls.title}
@@ -84,11 +84,11 @@ export const ArticleDetails = memo(({
             />
             <HStack align='center' gap='5'>
                 <Icon Svg={EyeIcon}/>
-                <TextCustom text={String(data?.views)}/>
+                <Text text={String(data?.views)}/>
             </HStack>
             <HStack align='center' gap='5'>
                 <Icon Svg={CalendarIcon}/>
-                <TextCustom text={data?.createdAt}/>
+                <Text text={data?.createdAt}/>
             </HStack>
             {data?.blocks && data?.blocks.map(renderBlock)}
         </>)

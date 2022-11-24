@@ -2,7 +2,7 @@ import React, {memo} from 'react';
 import {classNames} from 'shared/lib/classNames/classNames';
 import {VStack} from 'shared/ui/Stack';
 import cls from './CommentList.module.scss';
-import {TextCustom} from 'shared/ui/Text/TextCustom'
+import {Text} from 'shared/ui/Text/Text'
 import {useTranslation} from 'react-i18next';
 import {CommentCard} from '../CommentCard/CommentCard';
 import {CommentType} from '../../model/types/comment';
@@ -37,7 +37,7 @@ export const CommentList = memo((props: CommentListProps) => {
                         className={cls.comment}
                         isLoading={isLoading}
                     />)
-                : <TextCustom text={t('No comments')}/>
+                : <Text text={t('No comments')}/>
             }
         </VStack>
     );

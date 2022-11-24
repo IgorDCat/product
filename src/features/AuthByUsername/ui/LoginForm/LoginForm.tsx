@@ -7,7 +7,7 @@ import {Button} from 'shared/ui/Button/Button';
 import {Input} from 'shared/ui/Input/Input';
 import {loginActions, loginReducer} from '../../model/slice/loginSlice';
 import {loginByUsername} from '../../model/services/loginByUsername/loginByUsername';
-import {TextCustom, TextTheme} from 'shared/ui/Text/TextCustom';
+import {Text, TextTheme} from 'shared/ui/Text/Text';
 import {getLoginUsername} from '../../model/selectors/getLoginUsername/getLoginUsername';
 import {getLoginPassword} from '../../model/selectors/getLoginPassword/getLoginPassword';
 import {getLoginIsLoading} from '../../model/selectors/getLoginIsLoading/getLoginIsLoading';
@@ -53,7 +53,7 @@ const LoginForm = memo(({className, onSuccess}: LoginFormProps) => {
     return (
         <DynamicModuleLoader reducers={initialReducers} removeAfterUnmount>
             <div className={classNames(cls.LoginForm, {}, [className])}>
-                {error && <TextCustom text={error} theme={TextTheme.ERROR}></TextCustom>}
+                {error && <Text text={error} theme={TextTheme.ERROR}></Text>}
                 <Input className={cls.input} placeholder={t('username')} type="text" onChange={onChangeUsername}
                     value={username}/>
 
