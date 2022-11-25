@@ -39,7 +39,7 @@ module.exports = {
         'semi-style': ['error', 'last'],
         'i18next/no-literal-string': ['error', {
             markupOnly: true,
-            ignoreAttribute: ['data-testid', 'to', 'target', 'justify', 'align', 'direction', 'gap', 'role'],
+            ignoreAttribute: ['data-testid', 'to', 'target', 'justify', 'align', 'direction', 'gap', 'role', 'as'],
         }],
         'react/react-in-jsx-scope': 'off',
         'react/display-name': 'off',
