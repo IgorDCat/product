@@ -1,6 +1,6 @@
 import {Fragment, ReactNode} from 'react'
 import { Listbox } from '@headlessui/react'
-import {classNames} from 'shared/lib/classNames/classNames';
+import {classNames, Mods} from 'shared/lib/classNames/classNames';
 import cls from './ListBox.module.scss'
 
 export interface ListBoxItem {
@@ -35,6 +35,10 @@ export const ListBox = (props: ListBoxProps) => {
         mapDirection[direction]
     ]
 
+    const mods: Mods = {
+        [cls.disabled]: readonly
+    }
+
     return (
         <div>
             {label && <span>{label}</span>}
@@ -45,7 +49,7 @@ export const ListBox = (props: ListBoxProps) => {
                 onChange={onChange}
                 disabled={readonly}
             >
-                <Listbox.Button className={cls.trigger}>
+                <Listbox.Button className={classNames(cls.trigger, mods, optionsClasses)}>
                     {value ?? defaultValue}
                 </Listbox.Button>
                 <Listbox.Options className={classNames(cls.options, {}, optionsClasses)}>
@@ -64,8 +68,8 @@ export const ListBox = (props: ListBoxProps) => {
                                     },
                                     optionsClasses)}
                                 >
-                                    {selected && '(v) '}
                                     {item.content}
+                                    {selected && ' ☑'}
                                 </option>
                             )}
                         </Listbox.Option>
