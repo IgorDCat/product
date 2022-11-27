@@ -41,24 +41,21 @@ export const Dropdown = (props: DropdownProps) => {
             </Menu.Button>
             <Menu.Items className={classNames(cls.menu, {}, optionsClasses)}>
                 {items.map((item, index) => {
+                    const content = ({active}: {active: boolean}) => (
+                        <option
+                            className={classNames(cls.item, {[cls.active]: active})}
+                            onClick={item.onClick}
+                        >
+                            {item.content}
+                        </option>
+                    )
                     if(item.href) {
                         return <Menu.Item as={AppLink} to={item.href} key={index} disabled={item.disabled}>
-                            {({ active }) => (
-                                <option className={classNames(cls.item, {[cls.active]: active})}>
-                                    {item.content}
-                                </option>
-                            )}
+                            {content}
                         </Menu.Item>
                     }
                     return <Menu.Item as={Fragment} key={index} disabled={item.disabled}>
-                        {({ active }) => (
-                            <option
-                                className={classNames(cls.item, {[cls.active]: active})}
-                                onClick={item.onClick}
-                            >
-                                {item.content}
-                            </option>
-                        )}
+                        {content}
                     </Menu.Item>
                 })}
             </Menu.Items>
