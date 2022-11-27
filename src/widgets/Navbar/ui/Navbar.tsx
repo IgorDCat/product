@@ -1,5 +1,7 @@
 import React, {memo, useCallback, useState} from 'react';
 import {classNames} from 'shared/lib/classNames/classNames';
+import {Avatar} from 'shared/ui/Avatar/Avatar';
+import {Dropdown} from 'shared/ui/Dropdown/Dropdown';
 import cls from './Navbar.module.scss'
 import {Button, ThemeButton} from 'shared/ui/Button/Button';
 import {useTranslation} from 'react-i18next';
@@ -34,12 +36,20 @@ export const Navbar = memo(({className}: NavbarProps) => {
     if(authData) {
         return (
             <header className={classNames(cls.Navbar, {}, [className])}>
-                <AppLink to={RoutePath.article_create}>
-                    {t('Create a new article')} |
+                <AppLink to={RoutePath.article_create} className={cls.create}>
+                    {t('Create a new article')}
                 </AppLink>
-                <Button className={cls.btn} onClick={onLogout} theme={ThemeButton.CLEAR}>
-                    {t('Log-out')}
-                </Button>
+                <div className={cls.dropWrapper}>
+                    <Dropdown
+                        items={[
+                            {content: t('Profile'), href: RoutePath.profile + authData.id},
+                            {content: t('Log-out'), onClick: onLogout},
+                        ]}
+                        trigger={<Avatar src={authData.avatar} size={30}/>}
+                        direction='bottom left'
+                        className={cls.drop}
+                    />
+                </div>
             </header>
         )
     }

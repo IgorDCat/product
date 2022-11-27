@@ -1,0 +1,67 @@
+import React, {Fragment, ReactNode} from 'react';
+import {classNames} from 'shared/lib/classNames/classNames';
+import {DropDirection} from 'shared/types/ui';
+import {AppLink} from 'shared/ui/AppLink/AppLink';
+import cls from './Dropdown.module.scss';
+import { Menu } from '@headlessui/react'
+
+export interface DropdownItem {
+    content?: ReactNode;
+    onClick?: () => void;
+    href?: string;
+    disabled?: boolean;
+}
+
+interface DropdownProps {
+    className?: string;
+    items: DropdownItem[];
+    trigger: ReactNode;
+    direction?: DropDirection;
+}
+
+const mapDirection: Record<DropDirection, string> = {
+    'top right': cls.topRight,
+    'top left': cls.topLeft,
+    'bottom right': cls.bottomRight,
+    'bottom left': cls.bottomLeft
+}
+
+export const Dropdown = (props: DropdownProps) => {
+    const {className, items, trigger, direction = 'bottom right'} = props;
+
+    const optionsClasses = [
+        className,
+        mapDirection[direction]
+    ]
+
+    return (
+        <Menu as='span' className={classNames(cls.Dropdown, {}, optionsClasses)}>
+            <Menu.Button className={cls.btn}>
+                {trigger}
+            </Menu.Button>
+            <Menu.Items className={classNames(cls.menu, {}, optionsClasses)}>
+                {items.map((item, index) => {
+                    if(item.href) {
+                        return <Menu.Item as={AppLink} to={item.href} key={index} disabled={item.disabled}>
+                            {({ active }) => (
+                                <option className={classNames(cls.item, {[cls.active]: active})}>
+                                    {item.content}
+                                </option>
+                            )}
+                        </Menu.Item>
+                    }
+                    return <Menu.Item as={Fragment} key={index} disabled={item.disabled}>
+                        {({ active }) => (
+                            <option
+                                className={classNames(cls.item, {[cls.active]: active})}
+                                onClick={item.onClick}
+                            >
+                                {item.content}
+                            </option>
+                        )}
+                    </Menu.Item>
+                })}
+            </Menu.Items>
+        </Menu>
+    )
+}

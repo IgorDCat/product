@@ -16,9 +16,11 @@ const Template: ComponentStory<typeof ListBox> = (args) => <ListBox {...args}/>;
 
 export const Light = Template.bind({});
 Light.args = {
-    onChange: value => {}
+    onChange: value => {null}
 };
 
-// export const Dark = Template.bind({});
-// Dark.args = {};
-// Dark.decorators = [ThemeDecorator(Theme.DARK)];
+export const Dark = Template.bind({});
+Dark.args = {
+    onChange: value => {null}
+};
+Dark.decorators = [ThemeDecorator(Theme.DARK)];

@@ -1,6 +1,7 @@
+import {Listbox} from '@headlessui/react'
 import {Fragment, ReactNode} from 'react'
-import { Listbox } from '@headlessui/react'
 import {classNames, Mods} from 'shared/lib/classNames/classNames';
+import {DropDirection} from 'shared/types/ui';
 import cls from './ListBox.module.scss'
 
 export interface ListBoxItem {
@@ -8,8 +9,6 @@ export interface ListBoxItem {
     content: ReactNode;
     disabled?: boolean;
 }
-
-type DropDirection = 'up' | 'down';
 
 interface ListBoxProps {
     items?: ListBoxItem[];
@@ -23,12 +22,14 @@ interface ListBoxProps {
 }
 
 const mapDirection: Record<DropDirection, string> = {
-    up: cls.up,
-    down: cls.down
+    'top right': cls.topRight,
+    'top left': cls.topLeft,
+    'bottom right': cls.bottomRight,
+    'bottom left': cls.bottomLeft
 }
 
 export const ListBox = (props: ListBoxProps) => {
-    const {className, items, value, defaultValue, onChange, readonly, label, direction = 'down'} = props;
+    const {className, items, value, defaultValue, onChange, readonly, label, direction = 'bottom right'} = props;
 
     const optionsClasses = [
         className,
