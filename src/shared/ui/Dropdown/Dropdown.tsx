@@ -1,14 +1,14 @@
 import React, {Fragment, ReactNode} from 'react';
 import {classNames} from 'shared/lib/classNames/classNames';
 import {DropDirection} from 'shared/types/ui';
-import {AppLink} from 'shared/ui/AppLink/AppLink';
+import {AppLink} from '../AppLink/AppLink';
 import cls from './Dropdown.module.scss';
-import { Menu } from '@headlessui/react'
+import {Menu} from '@headlessui/react'
 
 export interface DropdownItem {
     content?: ReactNode;
     onClick?: () => void;
-    href?: string;
+    link?: string;
     disabled?: boolean;
 }
 
@@ -49,14 +49,18 @@ export const Dropdown = (props: DropdownProps) => {
                             {item.content}
                         </option>
                     )
-                    if(item.href) {
-                        return <Menu.Item as={AppLink} to={item.href} key={index} disabled={item.disabled}>
+                    if(item.link) {
+                        return (
+                            <Menu.Item as={AppLink} to={item.link} key={index} disabled={item.disabled} refName='href'>
+                                {content}
+                            </Menu.Item>
+                        )
+                    }
+                    return (
+                        <Menu.Item as={Fragment} key={index} disabled={item.disabled}>
                             {content}
                         </Menu.Item>
-                    }
-                    return <Menu.Item as={Fragment} key={index} disabled={item.disabled}>
-                        {content}
-                    </Menu.Item>
+                    )
                 })}
             </Menu.Items>
         </Menu>

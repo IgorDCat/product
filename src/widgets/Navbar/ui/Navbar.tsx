@@ -33,6 +33,11 @@ export const Navbar = memo(({className}: NavbarProps) => {
         dispatch(userActions.logout())
     }, [dispatch]);
 
+    const dropdownItems = [
+        {content: t('Profile'), link: RoutePath.profile + authData?.id},
+        {content: t('Log-out'), onClick: onLogout},
+    ]
+
     if(authData) {
         return (
             <header className={classNames(cls.Navbar, {}, [className])}>
@@ -41,10 +46,7 @@ export const Navbar = memo(({className}: NavbarProps) => {
                 </AppLink>
                 <div className={cls.dropWrapper}>
                     <Dropdown
-                        items={[
-                            {content: t('Profile'), href: RoutePath.profile + authData.id},
-                            {content: t('Log-out'), onClick: onLogout},
-                        ]}
+                        items={dropdownItems}
                         trigger={<Avatar src={authData.avatar} size={30}/>}
                         direction='bottom left'
                         className={cls.drop}

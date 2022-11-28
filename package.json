@@ -20,7 +20,8 @@
     "test:ui:ok": "npx loki approve",
     "test:ui:ci": "loki --requireReference --reactUri file:./storybook-static",
     "visual:report:json": "node scripts/generate-visual-json-report.js",
-    "visual:report:html": "reg-cli --from .loki/report.json --report .loki/report.html"
+    "visual:report:html": "reg-cli --from .loki/report.json --report .loki/report.html",
+    "new-slice": "node ./scripts/createSlice/index.js"
   },
   "keywords": [],
   "author": "",
