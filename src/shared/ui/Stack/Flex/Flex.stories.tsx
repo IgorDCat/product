@@ -3,7 +3,7 @@ import React from 'react';
 import {Flex} from './Flex';
 
 export default {
-    title: 'folder/Flex',
+    title: 'shared/Flex',
     component: Flex,
     argTypes: {
         backgroundColor: {control: 'color'},

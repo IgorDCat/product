@@ -7,7 +7,7 @@ import { StoreDecorator } from 'shared/config/storybook/StoreDecorator';
 import { Navbar } from './Navbar';
 
 export default {
-    title: 'widget/Navbar',
+    title: 'widgets/Navbar',
     component: Navbar,
     argTypes: {
         backgroundColor: { control: 'color' },
@@ -22,7 +22,7 @@ Light.decorators = [StoreDecorator({
 
 })];
 export const Dark = Template.bind({});
-Dark.args = {};
+Dark.args = {className: '675674'};
 Dark.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({})];
 
 export const AuthNavbar = Template.bind({});

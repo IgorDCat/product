@@ -2,7 +2,7 @@ import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator';
 import { Theme } from 'app/providers/ThemeProvider';
-import ProfilePage from '../ui/ProfilePage';
+import ProfilePage from './ProfilePage';
 import { StoreDecorator } from 'shared/config/storybook/StoreDecorator';
 import avatar from 'shared/assets/tests/storybook.jpg';
 

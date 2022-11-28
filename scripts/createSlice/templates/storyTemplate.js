@@ -1,13 +1,13 @@
 module.exports = (layer, componentName) => `import React from 'react';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import {ComponentStory, ComponentMeta} from '@storybook/react';
 
-import { ${componentName} } from './${componentName}';
+import {${componentName}} from './${componentName}';
 
 export default {
     title: '${layer}/${componentName}',
     component: ${componentName},
     argTypes: {
-        backgroundColor: { control: 'color' },
+        backgroundColor: {control: 'color'},
     },
 } as ComponentMeta<typeof ${componentName}>;
 

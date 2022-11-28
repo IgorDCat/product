@@ -4,7 +4,7 @@ import {Button, ThemeButton} from '../Button/Button';
 import {Dropdown} from './Dropdown';
 
 export default {
-    title: 'folder/Dropdown',
+    title: 'shared/Dropdown',
     component: Dropdown,
     argTypes: {
         backgroundColor: {control: 'color'},

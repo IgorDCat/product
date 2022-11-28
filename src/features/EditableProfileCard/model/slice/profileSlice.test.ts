@@ -1,6 +1,7 @@
 import {DeepPartial} from '@reduxjs/toolkit';
+import {ProfileSchema} from '../types/editableProfileCardSchema';
+import {ValidateProfileError} from '../types/editableProfileCardSchema';
 import {profileActions, profileReducer} from './profileSlice';
-import {ProfileSchema, ValidateProfileError} from '../types/profile';
 import {updateProfileData} from '../services/updateProfileData/updateProfileData';
 
 const data = {

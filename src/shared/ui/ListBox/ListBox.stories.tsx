@@ -5,7 +5,7 @@ import {ThemeDecorator} from 'shared/config/storybook/ThemeDecorator';
 import {ListBox} from './ListBox';
 
 export default {
-    title: 'folder/ListBox',
+    title: 'shared/ListBox',
     component: ListBox,
     argTypes: {
         backgroundColor: {control: 'color'},
@@ -14,13 +14,23 @@ export default {
 
 const Template: ComponentStory<typeof ListBox> = (args) => <ListBox {...args}/>;
 
+const items = [
+    {value: 'text 123123', content: 'text 123123'},
+    {value: 'text 123123', content: 'text 123123'},
+    {value: 'text 123123', content: 'text 123123'},
+]
+
 export const Light = Template.bind({});
 Light.args = {
-    onChange: value => {null}
+    onChange: (value) => {value},
+    items: items,
+    value: 'text 123'
 };
 
 export const Dark = Template.bind({});
 Dark.args = {
-    onChange: value => {null}
+    onChange: value => {value},
+    items: items,
+    value: 'text 123'
 };
 Dark.decorators = [ThemeDecorator(Theme.DARK)];

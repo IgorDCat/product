@@ -1,4 +1,5 @@
 import {configureStore, Reducer, ReducersMapObject} from '@reduxjs/toolkit';
+import {apiRtk} from 'shared/api/apiRtk';
 import {StateSchema} from '../index';
 import {counterReducer} from 'entities/Counter';
 import {userReducer} from 'entities/User';
@@ -16,6 +17,7 @@ export function createReduxStore(
         counter: counterReducer,
         user: userReducer,
         scrollSaver: scrollSaverReducer,
+        [apiRtk.reducerPath]: apiRtk.reducer
     }
 
     const reducerManager = createReducerManager(rootReducers);
@@ -30,7 +32,7 @@ export function createReduxStore(
                     api: api,
                 }
             }
-        })
+        }).concat(apiRtk.middleware)
     });
 
     // @ts-ignore

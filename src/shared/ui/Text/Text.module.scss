@@ -1,10 +1,10 @@
 .error {
     .title {
-        color: var(--red-light);
+        color: var(--red-light) !important;
     }
 
     .text {
-        color: var(--red-dark);
+        color: var(--red-dark) !important;
     }
 }
 

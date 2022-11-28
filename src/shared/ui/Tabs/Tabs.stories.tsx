@@ -6,7 +6,7 @@ import {Tabs} from './Tabs';
 import {action} from '@storybook/addon-actions';
 
 export default {
-    title: 'folder/Tabs',
+    title: 'shared/Tabs',
     component: Tabs,
     argTypes: {
         backgroundColor: {control: 'color'},

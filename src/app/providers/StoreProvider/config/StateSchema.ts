@@ -2,19 +2,22 @@ import {AnyAction, EnhancedStore, Reducer, ReducersMapObject} from '@reduxjs/too
 import {AxiosInstance} from 'axios';
 import {ArticleDetailsSchema} from 'entities/Article';
 import {CounterSchema} from 'entities/Counter';
-import {ProfileSchema} from 'entities/Profile';
 import {UserSchema} from 'entities/User';
 import {AddCommentFormSchema} from 'features/AddCommentForm';
 import {LoginSchema} from 'features/AuthByUsername';
+import {ProfileSchema} from 'features/EditableProfileCard';
 import {ScrollSaverSchema} from 'features/ScrollSaver';
 import {ArticleDetailsPageSchema} from 'pages/ArticleDetailsPage'
 import {ArticlesPageSchema} from 'pages/ArticlesPage';
 import {CombinedState} from 'redux';
+import {apiRtk} from 'shared/api/apiRtk';
+
 
 export interface StateSchema {
     counter: CounterSchema;
     user: UserSchema;
     scrollSaver: ScrollSaverSchema;
+    [apiRtk.reducerPath]: ReturnType<typeof apiRtk.reducer>;
 
     // async reducers
     loginForm?: LoginSchema;
