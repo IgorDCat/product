@@ -611,13 +611,22 @@
       "id": "1",
       "username": "admin",
       "password": "123",
-      "avatar": "https://pbs.twimg.com/profile_images/1538837176863039489/h3lHCMMF_400x400.jpg"
+      "avatar": "https://pbs.twimg.com/profile_images/1538837176863039489/h3lHCMMF_400x400.jpg",
+      "roles": ["ADMIN"]
     },
     {
       "id": "2",
       "username": "user1",
       "password": "123",
-      "avatar": "https://cs8.pikabu.ru/avatars/1323/x1323162-634231926.png"
+      "avatar": "https://cs8.pikabu.ru/avatars/1323/x1323162-634231926.png",
+      "roles": ["USER"]
+    },
+    {
+      "id": "3",
+      "username": "manager",
+      "password": "123",
+      "avatar": "https://cs8.pikabu.ru/avatars/2353/x2353828-1043405994.png",
+      "roles": ["MANAGER"]
     }
   ],
   "profile": [
@@ -641,6 +650,17 @@
       "city": "NY",
       "username": "user1",
       "avatar": "https://cs8.pikabu.ru/avatars/1323/x1323162-634231926.png",
+      "country": "USA"
+    },
+    {
+      "id": "3",
+      "firstname": "Pidrila",
+      "lastname": "Cat",
+      "age": 123,
+      "currency": "USD",
+      "city": "NY",
+      "username": "manager",
+      "avatar": "https://cs8.pikabu.ru/avatars/2353/x2353828-1043405994.png",
       "country": "USA"
     }
   ]

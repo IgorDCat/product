@@ -3,17 +3,17 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { Theme } from 'app/providers/ThemeProvider';
 import {StoreDecorator} from 'shared/config/storybook/StoreDecorator';
 import {ThemeDecorator} from 'shared/config/storybook/ThemeDecorator';
-import AboutPage from './AboutPage';
+import AdminPanelPage from './AdminPanelPage';
 
 export default {
     title: 'pages/AdminPanelPage',
-    component: AboutPage,
+    component: AdminPanelPage,
     argTypes: {
         backgroundColor: { control: 'color' },
     },
-} as ComponentMeta<typeof AboutPage>;
+} as ComponentMeta<typeof AdminPanelPage>;
 
-const Template: ComponentStory<typeof AboutPage> = (args) => <AboutPage {...args} />;
+const Template: ComponentStory<typeof AdminPanelPage> = (args) => <AdminPanelPage {...args} />;
 
 export const Dark = Template.bind({});
 Dark.args = {};
