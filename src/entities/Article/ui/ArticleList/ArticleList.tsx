@@ -1,7 +1,8 @@
+import {ArticleView} from '../../model/consts/articleConsts';
 import React, {HTMLAttributeAnchorTarget, memo, ReactNode} from 'react';
 import {classNames} from 'shared/lib/classNames/classNames';
 import cls from './ArticleList.module.scss';
-import {Article, ArticleView} from '../../model/types/article';
+import {Article} from '../../model/types/article';
 import {ArticleListItem} from '../ArticleListItem/ArticleListItem';
 import {ArticleListItemSkeleton} from '../ArticleListItem/ArticleListItemSkeleton';
 import {Text} from 'shared/ui/Text/Text';

@@ -1,6 +1,7 @@
 import {Countries} from 'entities/Country';
 import {Currency} from 'entities/Currency';
 import {ProfileCard} from 'entities/Profile';
+import {ValidateProfileError} from '../../model/consts/consts';
 import React, {memo, useCallback} from 'react';
 import {useTranslation} from 'react-i18next';
 import {useSelector} from 'react-redux';
@@ -17,7 +18,6 @@ import {getProfileReadonly} from '../../model/selectors/getProfileReadonly/getPr
 import {getProfileValidateErrors} from '../../model/selectors/getProfileValidateErrors/getProfileValidateErrors';
 import {fetchProfileData} from '../../model/services/fetchProfileData/fetchProfileData';
 import {profileActions, profileReducer} from '../../model/slice/profileSlice';
-import {ValidateProfileError} from '../../model/types/editableProfileCardSchema';
 import {EditableProfileCardHeader} from '../EditableProfileCardHeader/EditableProfileCardHeader';
 
 interface EditableProfileCardProps {

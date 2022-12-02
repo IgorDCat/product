@@ -1,4 +1,4 @@
-import {ValidateProfileError} from '../../types/editableProfileCardSchema';
+import {ValidateProfileError} from '../../consts/consts';
 import {TestAsyncThunk} from 'shared/lib/tests/testAsyncThunk/testAsyncThunk';
 import {updateProfileData} from './updateProfileData';
 

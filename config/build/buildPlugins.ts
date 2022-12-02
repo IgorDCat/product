@@ -6,6 +6,7 @@ import {BundleAnalyzerPlugin} from 'webpack-bundle-analyzer';
 import {getRandomInteger} from '../../src/helpers/getRandomInteger/getRandomInteger';
 import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin';
 import CopyPlugin from 'copy-webpack-plugin';
+import CircularDependencyPlugin from 'circular-dependency-plugin';
 
 export function buildPlugins(options: buildOptions): webpack.WebpackPluginInstance[] {
     const {paths, isDev, apiUrl, project} = options;
@@ -27,6 +28,11 @@ export function buildPlugins(options: buildOptions): webpack.WebpackPluginInstan
                 {from: paths.locales, to: paths.buildLocales},
             ],
         }),
+        new CircularDependencyPlugin({
+            exclude: /node_modules/,
+            failOnError: true,
+
+        })
     ]
     if (isDev) {
         plugins.push(new ReactRefreshWebpackPlugin())
