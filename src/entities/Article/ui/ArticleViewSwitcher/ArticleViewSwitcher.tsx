@@ -27,7 +27,7 @@ const viewTypes = [
 export const ArticleViewSwitcher = memo((props: ArticleViewSwitcherProps) => {
     const {className, view, onViewClick} = props;
 
-    const onSwitcherClick = useCallback((newView) => {
+    const onSwitcherClick = useCallback((newView: ArticleView) => {
         onViewClick?.(newView)
     }, [onViewClick]);
 

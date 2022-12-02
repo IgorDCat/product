@@ -1,4 +1,5 @@
 import {Listbox} from '@headlessui/react'
+import {DefaultTFuncReturn} from 'i18next';
 import {Fragment, ReactNode} from 'react'
 import {classNames, Mods} from 'shared/lib/classNames/classNames';
 import {DropDirection} from 'shared/types/ui';
@@ -17,7 +18,7 @@ interface ListBoxProps {
     defaultValue?: string;
     onChange: (value: string) => void;
     readonly?: boolean;
-    label?: string;
+    label?: string | DefaultTFuncReturn;
     direction?: DropDirection;
 }
 

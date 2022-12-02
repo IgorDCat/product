@@ -35,18 +35,17 @@ const LoginForm = memo(({className, onSuccess}: LoginFormProps) => {
     const error = useSelector(getLoginError);
 
     const onChangeUsername = useCallback((value: string) => {
-        dispatch(loginActions.setUserName(value))
+        dispatch(loginActions.setUserName(value));
     }, [dispatch]);
 
     const onChangePassword = useCallback((value: string) => {
-        dispatch(loginActions.setPassword(value))
+        dispatch(loginActions.setPassword(value));
     }, [dispatch]);
 
     const onLoginClick = useCallback(async () => {
         const result = await dispatch(loginByUsername({username, password}))
-        console.log(result)
         if(result.meta.requestStatus === 'fulfilled') {
-            onSuccess()
+            onSuccess();
         }
     }, [dispatch, onSuccess, password, username]);
 
@@ -55,12 +54,16 @@ const LoginForm = memo(({className, onSuccess}: LoginFormProps) => {
             <div className={classNames(cls.LoginForm, {}, [className])}>
                 {error && <Text text={error} theme={TextTheme.ERROR}></Text>}
                 <Input className={cls.input} placeholder={t('username')} type="text" onChange={onChangeUsername}
-                    value={username}/>
+                    value={username}
+                />
 
                 <Input className={cls.input} placeholder={t('password')} type="text" onChange={onChangePassword}
-                    value={password}/>
+                    value={password}
+                />
 
-                <Button onClick={onLoginClick} disabled={isLoading} className={cls.loginBtn}>{t('Log-in')}</Button>
+                <Button onClick={onLoginClick} disabled={isLoading} className={cls.loginBtn}>
+                    {t('Log-in')}
+                </Button>
             </div>
         </DynamicModuleLoader>
     );

@@ -1,3 +1,4 @@
+import {DefaultTFuncReturn} from 'i18next';
 import React, {memo} from 'react';
 import {classNames} from 'shared/lib/classNames/classNames';
 import cls from './Text.module.scss';
@@ -21,8 +22,8 @@ export const enum TextSize {
 
 interface TextProps {
 	className?: string;
-    title?: string;
-    text?: string;
+    title?: string | DefaultTFuncReturn;
+    text?: string | DefaultTFuncReturn;
     theme?: TextTheme;
     align?: TextAlign;
     size?: TextSize;

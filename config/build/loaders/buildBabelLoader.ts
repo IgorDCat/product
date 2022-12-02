@@ -10,6 +10,7 @@ export function buildBabelLoader({isDev}: buildOptions) {
                 presets: ['@babel/preset-env'],
                 plugins: [
                     isDev && require.resolve('react-refresh/babel'),
+                    '@babel/plugin-transform-modules-commonjs',
                 ].filter(Boolean),
             }
         }
