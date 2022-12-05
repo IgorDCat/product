@@ -3,7 +3,9 @@ import {DefaultTFuncReturn} from 'i18next';
 import {Fragment, ReactNode} from 'react'
 import {classNames, Mods} from 'shared/lib/classNames/classNames';
 import {DropDirection} from 'shared/types/ui';
+import {mapDirection} from '../../styles/consts';
 import cls from './ListBox.module.scss'
+import popupCls from '../../styles/popup.module.scss'
 
 export interface ListBoxItem {
     value: string;
@@ -20,13 +22,6 @@ interface ListBoxProps {
     readonly?: boolean;
     label?: string | DefaultTFuncReturn;
     direction?: DropDirection;
-}
-
-const mapDirection: Record<DropDirection, string> = {
-    'top right': cls.topRight,
-    'top left': cls.topLeft,
-    'bottom right': cls.bottomRight,
-    'bottom left': cls.bottomLeft
 }
 
 export const ListBox = (props: ListBoxProps) => {
@@ -46,7 +41,7 @@ export const ListBox = (props: ListBoxProps) => {
             {label && <span>{label}</span>}
             <Listbox
                 as='span'
-                className={classNames(cls.ListBox, {}, optionsClasses)}
+                className={classNames(cls.ListBox, {[popupCls.popup]: true}, optionsClasses)}
                 value={value}
                 onChange={onChange}
                 disabled={readonly}
@@ -65,8 +60,8 @@ export const ListBox = (props: ListBoxProps) => {
                             {({ active, selected }) => (
                                 <option className={classNames(cls.item,
                                     {
-                                        [cls.active]: active,
-                                        [cls.disabled]: item.disabled
+                                        [popupCls.active]: active,
+                                        [popupCls.disabled]: item.disabled
                                     },
                                     optionsClasses)}
                                 >

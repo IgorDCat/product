@@ -17,15 +17,12 @@
     margin: 0 5px;
 }
 
-.drop {
-    position: absolute;
-    margin-right: 10px;
-}
-
 .dropWrapper {
-    position: absolute;
+    position: relative;
     right: 10px;
     top: 10px;
+    height: 100%;
+    display: flex;
 }
 
 .create {

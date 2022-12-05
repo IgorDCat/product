@@ -1,0 +1,10 @@
+.panel {
+    padding: 5px;
+    background: var(--listbox-bg);
+    border-radius: 5px;
+    min-height: 150px;
+    max-height: 350px;
+    overflow-y: scroll;
+    width: 500px;
+    z-index: 990;
+}

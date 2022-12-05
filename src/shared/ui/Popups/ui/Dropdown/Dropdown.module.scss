@@ -1,0 +1,17 @@
+.menu {
+    position: relative;
+    padding: 5px 10px 5px 3px;
+    background: var(--listbox-bg);
+    border-radius: 5px;
+    min-width: 100%;
+    z-index: 97;
+    border: var(--secondary-color);
+}
+
+.item {
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    min-width: 100%;
+    z-index: 100;
+}
