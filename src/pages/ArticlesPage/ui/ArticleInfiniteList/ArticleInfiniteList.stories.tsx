@@ -1,8 +1,8 @@
 import {ComponentMeta, ComponentStory} from '@storybook/react';
-import {Theme} from 'app/providers/ThemeProvider';
+import {Theme} from '@/app/providers/ThemeProvider';
 import React from 'react';
-import {StoreDecorator} from 'shared/config/storybook/StoreDecorator';
-import {ThemeDecorator} from 'shared/config/storybook/ThemeDecorator';
+import {StoreDecorator} from '@/shared/config/storybook/StoreDecorator';
+import {ThemeDecorator} from '@/shared/config/storybook/ThemeDecorator';
 import {ArticleInfiniteList} from './ArticleInfiniteList';
 
 export default {

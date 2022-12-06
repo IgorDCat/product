@@ -1,11 +1,11 @@
 import {ComponentMeta, ComponentStory} from '@storybook/react';
-import {Theme} from 'app/providers/ThemeProvider';
-import {ArticleSortField, ArticleType, ArticleView} from 'entities/Article';
+import {Theme} from '@/app/providers/ThemeProvider';
+import {ArticleSortField, ArticleType, ArticleView} from '@/entities/Article';
 import React from 'react';
-import {articleForStories} from 'shared/assets/tests/ArticleForStories';
-import {StoreDecorator} from 'shared/config/storybook/StoreDecorator';
-import {ThemeDecorator} from 'shared/config/storybook/ThemeDecorator';
-import {SortOrder} from 'shared/types';
+import {articleForStories} from '@/shared/assets/tests/ArticleForStories';
+import {StoreDecorator} from '@/shared/config/storybook/StoreDecorator';
+import {ThemeDecorator} from '@/shared/config/storybook/ThemeDecorator';
+import {SortOrder} from '@/shared/types';
 import ArticlesPage from './ArticlesPage';
 
 export default {

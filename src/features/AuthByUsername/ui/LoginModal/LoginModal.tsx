@@ -1,7 +1,7 @@
 import React, { Suspense } from 'react';
-import {Modal} from 'shared/ui/Modal/Modal';
+import {Modal} from '@/shared/ui/Modal/Modal';
 import {LoginFormLazy} from '../LoginForm/LoginFormLazy';
-import {Loader} from 'shared/ui/Loader/Loader';
+import {Loader} from '@/shared/ui/Loader/Loader';
 
 interface LoginModalProps {
     className?: string;

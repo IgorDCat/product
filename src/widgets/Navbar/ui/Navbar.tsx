@@ -1,15 +1,15 @@
-import {getUserAuthData} from 'entities/User';
-import {LoginModal} from 'features/AuthByUsername';
-import {AvatarDropdown} from 'features/AvatarDropdown';
-import {NotificationButton} from 'features/NotificationButton';
+import {getUserAuthData} from '@/entities/User';
+import {LoginModal} from '@/features/AuthByUsername';
+import {AvatarDropdown} from '@/features/AvatarDropdown';
+import {NotificationButton} from '@/features/NotificationButton';
 import React, {memo, useCallback, useState} from 'react';
 import {useTranslation} from 'react-i18next';
 import {useSelector} from 'react-redux';
-import {RoutePath} from 'shared/config/routeConfig/routeConfig';
-import {classNames} from 'shared/lib/classNames/classNames';
-import {AppLink} from 'shared/ui/AppLink/AppLink';
-import {Button, ThemeButton} from 'shared/ui/Button/Button';
-import {HStack} from 'shared/ui/Stack';
+import {RoutePath} from '@/shared/config/routeConfig/routeConfig';
+import {classNames} from '@/shared/lib/classNames/classNames';
+import {AppLink} from '@/shared/ui/AppLink/AppLink';
+import {Button, ThemeButton} from '@/shared/ui/Button/Button';
+import {HStack} from '@/shared/ui/Stack';
 import cls from './Navbar.module.scss'
 
 interface NavbarProps {

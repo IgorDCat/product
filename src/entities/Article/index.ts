@@ -14,6 +14,4 @@ export {ArticleDetails} from './ui/ArticleDetails/ArticleDetails';
 
 export type {Article} from './model/types/article';
 
-export {
-    ArticleType, ArticleBlockType, ArticleSortField, ArticleView
-} from 'entities/Article/model/consts/articleConsts';
+export {ArticleSortField, ArticleView, ArticleType, ArticleBlockType} from './model/consts/articleConsts';
