@@ -5,6 +5,8 @@ import {useModal} from 'shared/lib/hooks/useModal/useModal';
 import {Overlay} from '../Overlay/Overlay';
 import {Portal} from '../Portal/Portal';
 import cls from './Modal.module.scss';
+// import {useDrag} from '@use-gesture/react'
+// import {a, useSpring, config} from '@react-spring/web'
 
 interface ModalProps {
     className?: string;
@@ -12,6 +14,7 @@ interface ModalProps {
     isOpen?: boolean;
     onClose?: () => void;
     disablePortal?: boolean;
+    lazy?: boolean;
 }
 
 export const Modal = (props: ModalProps) => {
