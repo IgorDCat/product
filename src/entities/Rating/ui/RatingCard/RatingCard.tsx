@@ -6,24 +6,26 @@ import {Modal} from '@/shared/ui/Modal/Modal';
 import {HStack, VStack} from '@/shared/ui/Stack';
 import {StarRating} from '@/shared/ui/StarRating/StarRating';
 import {Text} from '@/shared/ui/Text/Text';
+import {DefaultTFuncReturn} from 'i18next';
 import React, {memo, useCallback, useState} from 'react';
 import {useTranslation} from 'react-i18next';
 import cls from './RatingCard.module.scss';
 
 interface RatingCardProps {
     className?: string;
-    title?: string;
-    feedbackTitle?: string;
+    title?: string | DefaultTFuncReturn;
+    feedbackTitle?: string | DefaultTFuncReturn;
     hasFeedback?: boolean;
     onCancel?: (starCount: number) => void;
     onAccept?: (starCount: number, feedback: string) => void;
+    rate?: number
 }
 
 export const RatingCard = memo((props: RatingCardProps) => {
-    const {className, title, feedbackTitle, hasFeedback, onCancel, onAccept} = props;
+    const {className, title, feedbackTitle, hasFeedback, onCancel, onAccept, rate = 0} = props;
     const {t} = useTranslation();
     const [isModalOpen, setIsModalOpen] = useState(false);
-    const [starsCount, setStarsCount] = useState(0);
+    const [starsCount, setStarsCount] = useState(rate);
     const [feedback, setFeedback] = useState('');
 
     const onSelectStars = useCallback((starsCurrentCount: number) => {
@@ -39,17 +41,15 @@ export const RatingCard = memo((props: RatingCardProps) => {
     const acceptHandler = useCallback(() => {
         setIsModalOpen(false);
         if(hasFeedback) {
-            //onAccept?.(starsCount, feedback);
-            console.log(starsCount);
-            console.log(feedback);
+            onAccept?.(starsCount, feedback);
         }
     }, [feedback, hasFeedback, onAccept, starsCount]);
 
     return (
-        <Card className={classNames(cls.RatingCard, {}, [className])}>
+        <Card max className={classNames(cls.RatingCard, {}, [className])}>
             <VStack align='center' gap='10'>
                 <Text title={title}/>
-                <StarRating size={40} onSelect={onSelectStars}/>
+                <StarRating size={40} onSelect={onSelectStars} selectedStars={starsCount}/>
             </VStack>
             <Modal isOpen={isModalOpen} lazy>
                 <VStack max gap='32'>

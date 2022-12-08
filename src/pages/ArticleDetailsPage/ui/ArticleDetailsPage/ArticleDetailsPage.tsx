@@ -1,4 +1,5 @@
 import {ArticleDetails} from '@/entities/Article';
+import {ArticleRating} from '@/features/ArticleRating';
 import {ArticleRecommendationsList} from '@/features/ArticleRecommendationsList';
 import React, {memo} from 'react';
 import {useTranslation} from 'react-i18next';
@@ -46,6 +47,7 @@ const ArticleDetailsPage = memo(({className}: ArticleDetailsPageProps) => {
                 <VStack gap='16' max>
                     <ArticleDetailsPageHeader/>
                     <ArticleDetails id={id}/>
+                    <ArticleRating articleId={id}/>
                     <ArticleRecommendationsList/>
                     <ArticleDetailsComments id={id}/>
                 </VStack>

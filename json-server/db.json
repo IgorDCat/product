@@ -703,5 +703,34 @@
       "avatar": "https://cs8.pikabu.ru/avatars/2353/x2353828-1043405994.png",
       "country": "USA"
     }
+  ],
+  "article-ratings": [
+    {
+      "id": "1",
+      "rates": 4,
+      "feedback": "Хорошая статья",
+      "userIds": "1",
+      "articleId": "1"
+    },
+    {
+      "id": "2",
+      "rates": 5,
+      "feedback": "Отличная статья",
+      "userIds": "1",
+      "articleId": "2"
+    },
+    {
+      "rates": 5,
+      "articleId": "3",
+      "userIds": "1",
+      "id": "nqr-9lT"
+    },
+    {
+      "rates": 4,
+      "feedback": "some feedback",
+      "articleId": "4",
+      "userIds": "1",
+      "id": "63o5fzM"
+    }
   ]
 }
