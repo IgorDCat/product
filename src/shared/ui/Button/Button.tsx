@@ -20,7 +20,7 @@ interface ButtonProps extends HTMLButtonProps{
 }
 
 export const Button: FC<ButtonProps> = memo((props: ButtonProps) => {
-    const {className, children, theme = ThemeButton.NORMAL, disabled, ...otherProps} = props
+    const {className, children, theme = ThemeButton.NORMAL, disabled, ...otherProps} = props;
     return (
         <button className={classNames(cls.Button, {[cls.disabled]: disabled}, [className, cls[theme]])}
             {...otherProps}>

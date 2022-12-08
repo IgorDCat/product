@@ -18,15 +18,19 @@ interface ModalProps {
 }
 
 export const Modal = (props: ModalProps) => {
-    const {children, className, isOpen, onClose, disablePortal} = props;
+    const {children, className, isOpen, onClose, disablePortal, lazy} = props;
     const {theme} = useTheme();
 
-    const {isClosing, closeModal} = useModal({isOpen, onClose, animationDelay: 300});
+    const {isClosing, closeModal, isMounted} = useModal({isOpen, onClose, animationDelay: 300});
 
     const mods: Mods = {
         [cls.opened]: isOpen,
         [cls.isClosing]: isClosing
     }
+
+    // if (lazy && !isMounted) {
+    //     return null;
+    // }
 
     return (
         <Portal disablePortal={disablePortal}>
