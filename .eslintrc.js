@@ -49,7 +49,8 @@ module.exports = {
         'react-hooks/exhaustive-deps': 'error', // Checks effect dependencies
         '@typescript-eslint/ban-ts-comment': 'off',
         '@typescript-eslint/no-explicit-any': 'off',
-        'fsd-path-checker/path-checker': 'error'
+        'fsd-path-checker/path-checker': 'error',
+        'prefer-const': 'off'
     },
     globals: {
         __IS_DEV__: true,

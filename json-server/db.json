@@ -707,30 +707,65 @@
   "article-ratings": [
     {
       "id": "1",
-      "rates": 4,
-      "feedback": "Хорошая статья",
-      "userIds": "1",
+      "rates": [
+        5,
+        4,
+        5,
+        5
+      ],
+      "feedback": "",
+      "userIds": [
+        "3",
+        "4",
+        "1",
+        "2"
+      ],
       "articleId": "1"
     },
     {
       "id": "2",
-      "rates": 5,
+      "rates": [
+        5
+      ],
       "feedback": "Отличная статья",
-      "userIds": "1",
+      "userIds": [
+        "1"
+      ],
       "articleId": "2"
     },
     {
-      "rates": 5,
+      "rates": [
+        5
+      ],
       "articleId": "3",
-      "userIds": "1",
+      "userIds": [
+        "1"
+      ],
       "id": "nqr-9lT"
     },
     {
-      "rates": 4,
+      "rates": [
+        4
+      ],
       "feedback": "some feedback",
       "articleId": "4",
-      "userIds": "1",
+      "userIds": [
+        "1"
+      ],
       "id": "63o5fzM"
+    },
+    {
+      "id": "10",
+      "rates": [
+        4,
+        5
+      ],
+      "feedback": "",
+      "articleId": "10",
+      "userIds": [
+        "1",
+        "2"
+      ]
     }
   ]
 }
