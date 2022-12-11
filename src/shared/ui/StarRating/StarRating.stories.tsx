@@ -5,7 +5,7 @@ import {ThemeDecorator} from '@/shared/config/storybook/ThemeDecorator';
 import {StarRating} from './StarRating';
 
 export default {
-    title: 'folder/StarRating',
+    title: 'shared/StarRating',
     component: StarRating,
     argTypes: {
         backgroundColor: {control: 'color'},
@@ -15,8 +15,8 @@ export default {
 const Template: ComponentStory<typeof StarRating> = (args) => <StarRating {...args} />;
 
 export const Light = Template.bind({});
-Light.args = {};
+Light.args = {canVote: true};
 
 export const Dark = Template.bind({});
-Dark.args = {};
+Dark.args = {canVote: true};
 Dark.decorators = [ThemeDecorator(Theme.DARK)];

@@ -1,3 +1,5 @@
+import {Countries} from '@/entities/Country';
+import {Currency} from '@/entities/Currency';
 import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';
@@ -16,34 +18,29 @@ export default {
 
 const Template: ComponentStory<typeof ProfilePage> = (args) => <ProfilePage {...args} />;
 
+const profile = {
+    form: {
+        firstname: 'Igor',
+        lastname: 'Davydov',
+        age: 30,
+        city: 'Los-Angeles',
+        username: 'admin',
+        avatar,
+        country: Countries.USA,
+        currency: Currency.USD,
+    }
+}
+
 export const Normal = Template.bind({});
 Normal.args = {};
 Normal.decorators = [StoreDecorator({
-    profile: {
-        form: {
-            firstname: 'Igor',
-            lastname: 'Davydov',
-            age: 30,
-            city: 'Los-Angeles',
-            username: 'admin',
-            avatar
-        }
-    }
+    profile: profile
 })];
 
 export const Dark = Template.bind({});
 Dark.args = {};
 Dark.decorators = [ThemeDecorator(Theme.DARK),
     StoreDecorator({
-        profile: {
-            form: {
-                firstname: 'Igor',
-                lastname: 'Davydov',
-                age: 30,
-                city: 'Los-Angeles',
-                username: 'admin',
-                avatar
-            }
-        }
+        profile: profile
     })
 ];

@@ -13,7 +13,7 @@ interface ArticleRecommendationsListProps {
 export const ArticleRecommendationsList = memo((props: ArticleRecommendationsListProps) => {
     const {className} = props;
     const {t} = useTranslation();
-    const {data} = useArticleRecommendationsList(3);
+    const {data} = useArticleRecommendationsList(4);
 
     return (
         <VStack gap='10' max className={classNames('', {}, [className])}>

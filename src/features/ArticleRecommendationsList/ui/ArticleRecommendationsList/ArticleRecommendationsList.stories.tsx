@@ -1,3 +1,4 @@
+import {articleForStories} from '@/shared/assets/tests/ArticleForStories';
 import React from 'react';
 import {ComponentStory, ComponentMeta} from '@storybook/react';
 import {StoreDecorator} from '@/shared/config/storybook/StoreDecorator';
@@ -10,6 +11,21 @@ export default {
     argTypes: {
         backgroundColor: {control: 'color'},
     },
+    parameters:  {
+        mockData: [
+            {
+                url: 'http:/localhost:3000/articles?_limit=4 ',
+                method: 'GET',
+                status: 200,
+                response: [
+                    {...articleForStories, id: 1},
+                    {...articleForStories, id: 2},
+                    {...articleForStories, id: 3},
+                    {...articleForStories, id: 4},
+                ],
+            },
+        ],
+    },
 } as ComponentMeta<typeof ArticleRecommendationsList>;
 
 const Template: ComponentStory<typeof ArticleRecommendationsList> = (args) => <ArticleRecommendationsList {...args} />;
@@ -18,4 +34,4 @@ export const Normal = Template.bind({});
 Normal.args = {
    
 };
-Normal.decorators = [StoreDecorator({})];
+Normal.decorators = [StoreDecorator({user: {authData: {}}})];

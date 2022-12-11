@@ -22,7 +22,7 @@ import {EditableProfileCardHeader} from '../EditableProfileCardHeader/EditablePr
 
 interface EditableProfileCardProps {
     className?: string;
-    id: string;
+    id?: string;
 }
 
 const reducers: ReducersList = {
@@ -40,7 +40,9 @@ export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
     const validateErrors = useSelector(getProfileValidateErrors);
 
     useInitialEffect(() => {
-        dispatch(fetchProfileData(id));
+        if(id) {
+            dispatch(fetchProfileData(id));
+        }
     });
 
     const validateErrorTranslates = {

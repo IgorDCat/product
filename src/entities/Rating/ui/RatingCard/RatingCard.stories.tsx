@@ -5,7 +5,7 @@ import {ThemeDecorator} from '@/shared/config/storybook/ThemeDecorator';
 import {RatingCard} from './RatingCard';
 
 export default {
-    title: 'folder/RatingCard',
+    title: 'entities/RatingCard',
     component: RatingCard,
     argTypes: {
         backgroundColor: {control: 'color'},
@@ -15,7 +15,7 @@ export default {
 const Template: ComponentStory<typeof RatingCard> = (args) => <RatingCard {...args} />;
 
 export const Light = Template.bind({});
-Light.args = {};
+Light.args = {canVote: true, averageRating: 4.5, numberOfVoters: 10};
 
 export const Dark = Template.bind({});
 Dark.args = {};

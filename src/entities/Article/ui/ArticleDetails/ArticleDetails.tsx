@@ -1,7 +1,3 @@
-import {ArticleBlockType} from '../../model/consts/articleConsts';
-import React, {memo, useCallback} from 'react';
-import {useTranslation} from 'react-i18next';
-import {useSelector} from 'react-redux';
 import CalendarIcon from '@/shared/assets/icons/calendar-icon.svg';
 import EyeIcon from '@/shared/assets/icons/eye-icon.svg';
 import {classNames} from '@/shared/lib/classNames/classNames';
@@ -12,7 +8,11 @@ import {Avatar} from '@/shared/ui/Avatar/Avatar';
 import {Icon} from '@/shared/ui/Icon/Icon';
 import {Skeleton} from '@/shared/ui/Skeleton/Skeleton';
 import {HStack} from '@/shared/ui/Stack';
-import {TextAlign, Text, TextSize, TextTheme} from '@/shared/ui/Text/Text';
+import {Text, TextAlign, TextSize, TextTheme} from '@/shared/ui/Text/Text';
+import React, {memo, useCallback} from 'react';
+import {useTranslation} from 'react-i18next';
+import {useSelector} from 'react-redux';
+import {ArticleBlockType} from '../../model/consts/articleConsts';
 import {
     getArticleDetailsData, getArticleDetailsError, getArticleDetailsIsLoading
 } from '../../model/selectors/getArticleDetails';
@@ -26,7 +26,7 @@ import cls from './ArticleDetails.module.scss';
 
 interface ArticleDetailsProps {
     className?: string;
-    id: string
+    id?: string
 }
 
 const reducers: ReducersList = {
@@ -54,7 +54,11 @@ export const ArticleDetails = memo(({
         }
     }, []);
 
-    useInitialEffect(() => dispatch(fetchArticleById(id)));
+    useInitialEffect(() => {
+        if(id) {
+            dispatch(fetchArticleById(id))
+        }
+    });
 
     let content;
 

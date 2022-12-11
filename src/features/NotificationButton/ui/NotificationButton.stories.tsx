@@ -1,3 +1,4 @@
+import {StoreDecorator} from '@/shared/config/storybook/StoreDecorator';
 import React from 'react';
 import {ComponentStory, ComponentMeta} from '@storybook/react';
 import {Theme} from '@/app/providers/ThemeProvider';
@@ -5,7 +6,7 @@ import {ThemeDecorator} from '@/shared/config/storybook/ThemeDecorator';
 import {NotificationButton} from './NotificationButton';
 
 export default {
-    title: 'folder/NotificationButton',
+    title: 'features/NotificationButton',
     component: NotificationButton,
     argTypes: {
         backgroundColor: {control: 'color'},
@@ -15,8 +16,9 @@ export default {
 const Template: ComponentStory<typeof NotificationButton> = (args) => <NotificationButton {...args} />;
 
 export const Light = Template.bind({});
-Light.args = {};
+Light.args = {className: 'storybook'};
+Light.decorators = [StoreDecorator({})];
 
 export const Dark = Template.bind({});
 Dark.args = {};
-Dark.decorators = [ThemeDecorator(Theme.DARK)];
+Dark.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({})];
