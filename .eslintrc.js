@@ -50,7 +50,14 @@ module.exports = {
         '@typescript-eslint/ban-ts-comment': 'off',
         '@typescript-eslint/no-explicit-any': 'off',
         'fsd-path-checker/path-checker': ['error', {'alias': '@'}],
-        'fsd-path-checker/imports-public-api': ['error', {'alias': '@'}],
+        'fsd-path-checker/imports-public-api': ['error', {
+            alias: '@',
+            testFilesPatterns: ['**/*.test.*', '**/*.stories.*', '**/StoreDecorator.tsx']
+        }],
+        'fsd-path-checker/layer-imports': ['error', {
+            alias: '@',
+            ignoreImportPatterns: ['**/StoreProvider', '**/testing']
+        }],
         'prefer-const': 'off'
     },
     globals: {

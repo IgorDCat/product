@@ -1,5 +1,5 @@
-import {AppRouter} from '@/app/providers/router';
-import {useTheme} from '@/app/providers/ThemeProvider';
+import {useTheme} from '@/shared/lib/hooks/useTheme/useTheme';
+import {AppRouter} from './providers/router';
 import {getUserIsInit, userActions} from '@/entities/User';
 import React, {Suspense, useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';

@@ -1,4 +1,4 @@
-import {useTheme} from '@/app/providers/ThemeProvider';
+import {useTheme} from '../../lib/hooks/useTheme/useTheme';
 import React, {ReactNode} from 'react';
 import {classNames, Mods} from '@/shared/lib/classNames/classNames';
 import {useModal} from '@/shared/lib/hooks/useModal/useModal';

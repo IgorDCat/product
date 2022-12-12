@@ -3,7 +3,7 @@ import {apiRtk} from '@/shared/api/apiRtk';
 import {StateSchema} from '../index';
 import {counterReducer} from '@/entities/Counter';
 import {userReducer} from '@/entities/User';
-import {createReducerManager} from '@/app/providers/StoreProvider/config/reducerManager';
+import {createReducerManager} from './reducerManager';
 import {api} from '@/shared/api/api';
 import {CombinedState} from 'redux';
 import {scrollSaverReducer} from '@/features/ScrollSaver';

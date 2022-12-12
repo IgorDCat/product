@@ -1,9 +1,9 @@
+import {RoutePath} from '@/shared/const/router';
 import React, {memo, useCallback} from 'react';
 import {classNames} from '@/shared/lib/classNames/classNames';
 import {HStack} from '@/shared/ui/Stack';
 import {useTranslation} from 'react-i18next';
 import {Button, ThemeButton} from '@/shared/ui/Button/Button';
-import {RoutePath} from '@/shared/config/routeConfig/routeConfig';
 import {useNavigate} from 'react-router-dom';
 import {useSelector} from 'react-redux';
 import {getCanEditArticle} from '../../model/selectors/getCanEditArticle';

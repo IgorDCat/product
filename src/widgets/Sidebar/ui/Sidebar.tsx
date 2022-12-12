@@ -2,8 +2,8 @@ import React, {memo, useState} from 'react';
 import {classNames} from '@/shared/lib/classNames/classNames';
 import {VStack} from '@/shared/ui/Stack';
 import cls from './Sidebar.module.scss'
-import {ThemeSwitcher} from '@/widgets/ThemeSwitcher';
-import {LangSwitcher} from '@/widgets/LangSwitcher';
+import {ThemeSwitcher} from '@/features/ThemeSwitcher';
+import {LangSwitcher} from '@/features/LangSwitcher';
 import {Button, ThemeButton} from '@/shared/ui/Button/Button';
 import {SidebarItem} from './SidebarItem/SidebarItem';
 import {getSidebarItems} from '../model/selectors/getSidebarItems';

@@ -1,7 +1,7 @@
+import {Theme} from '@/shared/const/theme';
 import {ArticleView} from '../../model/consts/articleConsts';
 import React from 'react';
 import {ComponentMeta, ComponentStory} from '@storybook/react';
-import {Theme} from '@/app/providers/ThemeProvider';
 import {ThemeDecorator} from '@/shared/config/storybook/ThemeDecorator';
 import {ArticleListItem} from './ArticleListItem';
 import {articleForStories} from '@/shared/assets/tests/ArticleForStories';

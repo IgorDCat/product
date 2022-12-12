@@ -1,17 +1,11 @@
 import {Story} from '@storybook/react';
-// TODO
 import {StateSchema, StoreProvider} from '@/app/providers/StoreProvider';
-// eslint-disable-next-line fsd-path-checker/imports-public-api
-import {loginReducer} from '@/features/AuthByUsername/model/slice/loginSlice';
-// eslint-disable-next-line fsd-path-checker/imports-public-api
-import {profileReducer} from '@/features/EditableProfileCard/model/slice/profileSlice';
+import {loginReducer} from '@/features/AuthByUsername/testing';
+import {profileReducer} from '@/features/EditableProfileCard/testing';
 import {ReducersList} from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
-// eslint-disable-next-line fsd-path-checker/imports-public-api
-import {articleDetailsReducer} from '@/entities/Article/model/slice/articleDetailsSlice';
-// eslint-disable-next-line fsd-path-checker/imports-public-api
-import {addCommentFormReducer} from '@/features/AddCommentForm/model/slices/addCommentFormSlice';
-// eslint-disable-next-line fsd-path-checker/imports-public-api
-import {articleDetailsPageReducer} from '@/pages/ArticleDetailsPage/model/slices';
+import {articleDetailsReducer} from '@/entities/Article/testing';
+import {addCommentFormReducer} from '@/features/AddCommentForm/testing';
+import {articleDetailsPageReducer} from '@/pages/ArticleDetailsPage/testing';
 
 const defaultAsyncReducers: ReducersList = {
     loginForm: loginReducer,
@@ -24,7 +18,7 @@ const defaultAsyncReducers: ReducersList = {
 export const StoreDecorator = (
     state: DeepPartial<StateSchema>,
     asyncReducers?: ReducersList) => (StoryComponent: Story) => (
-    <StoreProvider initialState={state} asyncReducers={{ ...defaultAsyncReducers, ...asyncReducers }}>
+    <StoreProvider initialState={state} asyncReducers={{...defaultAsyncReducers, ...asyncReducers}}>
         <StoryComponent />
     </StoreProvider>
 );
