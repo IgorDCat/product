@@ -1,3 +1,5 @@
+export type {UserRole} from './model/types/user';
+
 export {isUserAdmin, isUserManager, getUserRoles} from './model/selectors/roleSelectors';
 
 export {getUserIsInit} from './model/selectors/getUserInitialized/getUserInitialized';

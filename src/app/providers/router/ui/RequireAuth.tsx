@@ -1,4 +1,4 @@
-import {UserRole} from '@/entities/User/model/types/user';
+import {UserRole} from '@/entities/User';
 import {useMemo} from 'react';
 import {useSelector} from 'react-redux';
 import {getUserAuthData, getUserRoles} from '@/entities/User';

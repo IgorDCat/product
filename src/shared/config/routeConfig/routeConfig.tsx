@@ -1,4 +1,4 @@
-import {UserRole} from '@/entities/User/model/types/user';
+import {UserRole} from '@/entities/User';
 import {AdminPanelPage} from '@/pages/AdminPanelPage';
 import {ForbiddenPage} from '@/pages/ForbiddenPage';
 import { RouteProps } from 'react-router-dom';

@@ -8,7 +8,7 @@ import {DynamicModuleLoader, ReducersList} from '@/shared/lib/components/Dynamic
 import {useAppDispatch} from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import {useInitialEffect} from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
 import {VStack} from '@/shared/ui/Stack';
-import {Page} from '@/widgets/Page/Page';
+import {Page} from '@/widgets/Page';
 import {fetchArticleRecommendations} from '../../model/services/fetchArticleRecommendations';
 import {articleDetailsPageReducer} from '../../model/slices';
 import {ArticleDetailsComments} from '../ArticleDetailsComments/ArticleDetailsComments';

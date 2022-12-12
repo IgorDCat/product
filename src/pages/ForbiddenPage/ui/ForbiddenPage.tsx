@@ -1,6 +1,6 @@
 import React, {memo} from 'react';
 import {classNames} from '@/shared/lib/classNames/classNames';
-import {Page} from '@/widgets/Page/Page';
+import {Page} from '@/widgets/Page';
 import cls from './ForbiddenPage.module.scss';
 import {useTranslation} from 'react-i18next';
 
