@@ -7,8 +7,8 @@ import React, {memo, useCallback, useState} from 'react';
 import {useTranslation} from 'react-i18next';
 import {useSelector} from 'react-redux';
 import {classNames} from '@/shared/lib/classNames/classNames';
-import {AppLink} from '@/shared/ui/AppLink/AppLink';
-import {Button, ThemeButton} from '@/shared/ui/Button/Button';
+import {AppLink} from '@/shared/ui/AppLink';
+import {Button, ThemeButton} from '@/shared/ui/Button';
 import {HStack} from '@/shared/ui/Stack';
 import cls from './Navbar.module.scss'
 

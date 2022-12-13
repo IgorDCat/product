@@ -1,5 +1,5 @@
 import {ArticleRatingProps} from './ArticleRating';
-import {Skeleton} from '@/shared/ui/Skeleton/Skeleton';
+import {Skeleton} from '@/shared/ui/Skeleton';
 import React, {Suspense} from 'react';
 
 const ArticleRatingAsync = React.lazy(() => import('./ArticleRating'));

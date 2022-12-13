@@ -1,7 +1,7 @@
 import React, {memo} from 'react';
 import {classNames} from '@/shared/lib/classNames/classNames';
 import cls from './SidebarItem.module.scss';
-import {AppLink} from '@/shared/ui/AppLink/AppLink';
+import {AppLink} from '@/shared/ui/AppLink';
 import {useTranslation} from 'react-i18next';
 import {SidebarItemsType} from '../../model/types/sidebar';
 

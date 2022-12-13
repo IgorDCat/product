@@ -30,7 +30,8 @@ module.exports = {
         '@typescript-eslint',
         'i18next',
         'react-hooks',
-        'fsd-path-checker'
+        'fsd-path-checker',
+        'unused-imports'
     ],
     'rules': {
         'indent': ['error', 4, {'SwitchCase': 1}],
@@ -58,7 +59,8 @@ module.exports = {
             alias: '@',
             ignoreImportPatterns: ['**/StoreProvider', '**/testing']
         }],
-        'prefer-const': 'off'
+        'prefer-const': 'off',
+        'unused-imports/no-unused-imports': 'error',
     },
     globals: {
         __IS_DEV__: true,

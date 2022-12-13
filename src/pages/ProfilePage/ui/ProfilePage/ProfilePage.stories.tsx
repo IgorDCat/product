@@ -1,7 +1,6 @@
 import {Countries} from '@/entities/Country';
 import {Currency} from '@/entities/Currency';
 import {Theme} from '@/shared/const/theme';
-import React from 'react';
 import {ComponentMeta, ComponentStory} from '@storybook/react';
 import {ThemeDecorator} from '@/shared/config/storybook/ThemeDecorator';
 import ProfilePage from './ProfilePage';

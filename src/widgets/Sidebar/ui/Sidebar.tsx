@@ -4,7 +4,7 @@ import {VStack} from '@/shared/ui/Stack';
 import cls from './Sidebar.module.scss'
 import {ThemeSwitcher} from '@/features/ThemeSwitcher';
 import {LangSwitcher} from '@/features/LangSwitcher';
-import {Button, ThemeButton} from '@/shared/ui/Button/Button';
+import {Button, ThemeButton} from '@/shared/ui/Button';
 import {SidebarItem} from './SidebarItem/SidebarItem';
 import {getSidebarItems} from '../model/selectors/getSidebarItems';
 import {useSelector} from 'react-redux';

@@ -6,7 +6,7 @@ import {getArticles} from '../../model/slice/articlesPageSlice';
 import React, {memo} from 'react';
 import {useTranslation} from 'react-i18next';
 import {useSelector} from 'react-redux';
-import {Text} from '@/shared/ui/Text/Text';
+import {Text} from '@/shared/ui/Text';
 
 interface ArticleInfiniteListProps {
     className?: string;
