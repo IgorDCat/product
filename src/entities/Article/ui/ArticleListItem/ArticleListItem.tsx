@@ -1,4 +1,4 @@
-import {RoutePath} from '@/shared/const/router';
+import {getRouteArticleDetails} from '@/shared/const/router';
 import {ArticleBlockType, ArticleView} from '../../model/consts/articleConsts';
 import React, {HTMLAttributeAnchorTarget, memo} from 'react';
 import {classNames} from '@/shared/lib/classNames/classNames';
@@ -59,7 +59,7 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
                     <ArticleTextBlockComponent block={textBlock} className={cls.textBlock}/>
                 }
                 <div className={cls.footer}>
-                    <AppLink to={RoutePath.article_details + article.id} target={target}>
+                    <AppLink to={getRouteArticleDetails(article.id)} target={target}>
                         <Button theme={ThemeButton.OUTLINE}>
                             {t('Read more...')}
                         </Button>
@@ -72,7 +72,7 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
 
     return (
         <AppLink
-            to={RoutePath.article_details + article.id}
+            to={getRouteArticleDetails(article.id)}
             target={target}
             className={classNames(cls.ArticleListItem, {}, [className, cls[view]])}
         >

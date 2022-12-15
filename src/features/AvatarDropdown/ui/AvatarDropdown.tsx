@@ -1,5 +1,5 @@
 import {getUserAuthData, isUserAdmin, isUserManager, userActions} from '@/entities/User';
-import {RoutePath} from '@/shared/const/router';
+import {getRouteAdmin, getRouteProfile} from '@/shared/const/router';
 import React, {memo, useCallback} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {classNames} from '@/shared/lib/classNames/classNames';
@@ -27,10 +27,10 @@ export const AvatarDropdown = memo((props: AvatarDropdownProps) => {
 
     const dropdownItems = [
         ...(isAdminPanelAvailable ?
-            [{content: t('Admin panel'), link: RoutePath.admin_panel}]
+            [{content: t('Admin panel'), link: getRouteAdmin()}]
             : []
         ),
-        {content: t('Profile'), link: RoutePath.profile + authData?.id},
+        {content: t('Profile'), link: getRouteProfile(authData?.id)},
         {content: t('Log-out'), onClick: onLogout},
     ];
 

@@ -2,7 +2,7 @@ import {getUserAuthData} from '@/entities/User';
 import {LoginModal} from '@/features/AuthByUsername';
 import {AvatarDropdown} from '@/features/AvatarDropdown';
 import {NotificationButton} from '@/features/NotificationButton';
-import {RoutePath} from '@/shared/const/router';
+import {getRouteArticleCreate} from '@/shared/const/router';
 import React, {memo, useCallback, useState} from 'react';
 import {useTranslation} from 'react-i18next';
 import {useSelector} from 'react-redux';
@@ -32,7 +32,7 @@ export const Navbar = memo(({className}: NavbarProps) => {
     if(authData) {
         return (
             <header className={classNames(cls.Navbar, {}, [className])}>
-                <AppLink to={RoutePath.article_create} className={cls.create}>
+                <AppLink to={getRouteArticleCreate()} className={cls.create}>
                     {t('Create a new article')}
                 </AppLink>
                 <HStack align='start' className={cls.dropWrapper}>
