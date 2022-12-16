@@ -2,17 +2,17 @@ import {Theme} from '@/shared/const/theme';
 import React from 'react';
 import {ComponentStory, ComponentMeta} from '@storybook/react';
 import {ThemeDecorator} from '@/shared/config/storybook/ThemeDecorator';
-import {ArticleTypeTabs} from './ArticleTypeTabs';
+import {ArticleSortSwitcher} from './ArticleSortSwitcher';
 
 export default {
-    title: 'entities/ArticleTypeTabs',
-    component: ArticleTypeTabs,
+    title: 'features/ArticleSortSwitcher',
+    component: ArticleSortSwitcher,
     argTypes: {
         backgroundColor: {control: 'color'},
     },
-} as ComponentMeta<typeof ArticleTypeTabs>;
+} as ComponentMeta<typeof ArticleSortSwitcher>;
 
-const Template: ComponentStory<typeof ArticleTypeTabs> = (args) => <ArticleTypeTabs {...args} />;
+const Template: ComponentStory<typeof ArticleSortSwitcher> = (args) => <ArticleSortSwitcher {...args} />;
 
 export const Light = Template.bind({});
 Light.args = {};

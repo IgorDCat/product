@@ -9,7 +9,6 @@ import {Text} from '@/shared/ui/Text';
 import {DefaultTFuncReturn} from 'i18next';
 import React, {memo, useCallback, useState} from 'react';
 import {useTranslation} from 'react-i18next';
-import cls from './RatingCard.module.scss';
 
 interface RatingCardProps {
     className?: string;
@@ -60,7 +59,7 @@ export const RatingCard = memo((props: RatingCardProps) => {
     }, [feedback, hasFeedback, onAccept, starsCount]);
 
     return (
-        <Card max className={classNames(cls.RatingCard, {}, [className])}>
+        <Card max className={classNames('', {}, [className])}>
             <VStack align='center' gap='10'>
                 <Text title={title}/>
                 <StarRating size={40} onSelect={onSelectStars} selectedStars={starsCount} canVote={canVote}/>

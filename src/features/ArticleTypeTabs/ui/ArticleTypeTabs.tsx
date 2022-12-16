@@ -1,7 +1,7 @@
-import {ArticleType} from '../../model/consts/articleConsts';
 import React, {memo, useCallback, useMemo} from 'react';
 import {classNames} from '@/shared/lib/classNames/classNames';
 import {TabItem, Tabs} from '@/shared/ui/Tabs';
+import {ArticleType} from '@/entities/Article';
 
 interface ArticleTypeTabsProps {
     selectedValue: string;
