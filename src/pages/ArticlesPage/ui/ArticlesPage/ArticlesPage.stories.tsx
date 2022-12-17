@@ -6,6 +6,7 @@ import {StoreDecorator} from '@/shared/config/storybook/StoreDecorator';
 import {ThemeDecorator} from '@/shared/config/storybook/ThemeDecorator';
 import {SortOrder} from '@/shared/types';
 import ArticlesPage from './ArticlesPage';
+import {Theme} from '@/shared/const/theme';
 
 export default {
     title: 'pages/ArticlesPage',

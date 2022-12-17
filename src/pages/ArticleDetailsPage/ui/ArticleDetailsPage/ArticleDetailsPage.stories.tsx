@@ -4,6 +4,7 @@ import {ThemeDecorator} from '@/shared/config/storybook/ThemeDecorator';
 import ArticleDetailsPage from './ArticleDetailsPage';
 import {StoreDecorator} from '@/shared/config/storybook/StoreDecorator';
 import {articleForStories} from '@/shared/assets/tests/ArticleForStories';
+import {Theme} from '@/shared/const/theme';
 
 export default {
     title: 'pages/ArticleDetailsPage',

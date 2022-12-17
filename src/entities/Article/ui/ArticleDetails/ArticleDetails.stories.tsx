@@ -4,6 +4,7 @@ import {ThemeDecorator} from '@/shared/config/storybook/ThemeDecorator';
 import {ArticleDetails} from './ArticleDetails';
 import {StoreDecorator} from '@/shared/config/storybook/StoreDecorator';
 import {articleForStories} from '@/shared/assets/tests/ArticleForStories';
+import {Theme} from '@/shared/const/theme';
 
 export default {
     title: 'entities/ArticleDetails',

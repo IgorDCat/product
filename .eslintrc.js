@@ -61,6 +61,7 @@ module.exports = {
         }],
         'prefer-const': 'off',
         'unused-imports/no-unused-imports': 'error',
+        '@typescript-eslint/no-non-null-assertion': 'off'
     },
     globals: {
         __IS_DEV__: true,

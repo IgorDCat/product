@@ -3,6 +3,7 @@ import {ComponentMeta, ComponentStory} from '@storybook/react';
 import {ThemeDecorator} from '@/shared/config/storybook/ThemeDecorator';
 import {ProfileCard} from './ProfileCard';
 import avatar from '@/shared/assets/tests/storybook.jpg'
+import {Theme} from '@/shared/const/theme';
 
 export default {
     title: 'entities/ProfileCard',
