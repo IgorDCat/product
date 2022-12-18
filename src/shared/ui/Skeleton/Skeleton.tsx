@@ -4,8 +4,8 @@ import cls from './Skeleton.module.scss';
 
 interface SkeletonProps {
     className?: string;
-    height?: string | number;
-    width?: string | number;
+    height: string | number;
+    width: string | number;
     border?: string;
 }
 
@@ -20,9 +20,9 @@ export const Skeleton = (props: SkeletonProps) => {
 
 
     return (
-        <div className={classNames(cls.Skeleton, {}, [className])}
-            style={styles}>
-
-        </div>
+        <div
+            className={classNames(cls.Skeleton, {}, [className])}
+            style={styles}
+        />
     );
 }

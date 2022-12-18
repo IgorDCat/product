@@ -654,7 +654,6 @@
       "id": "2",
       "username": "user1",
       "password": "123",
-      "avatar": "https://cs8.pikabu.ru/avatars/1323/x1323162-634231926.png",
       "roles": [
         "USER"
       ]
@@ -689,7 +688,6 @@
       "currency": "USD",
       "city": "NY",
       "username": "user1",
-      "avatar": "https://cs8.pikabu.ru/avatars/1323/x1323162-634231926.png",
       "country": "USA"
     },
     {

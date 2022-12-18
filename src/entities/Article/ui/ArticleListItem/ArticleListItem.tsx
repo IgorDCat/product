@@ -13,6 +13,8 @@ import {Avatar} from '@/shared/ui/Avatar';
 import {Button, ThemeButton} from '@/shared/ui/Button';
 import {ArticleTextBlockComponent} from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
 import {AppLink} from '@/shared/ui/AppLink';
+import {AppImage} from '@/shared/ui/AppImage';
+import {Skeleton} from '@/shared/ui/Skeleton';
 
 interface ArticleListItemProps {
     className?: string;
@@ -37,7 +39,6 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
         </div>
     );
     const date = <Text text={article.createdAt} className={cls.date}/>
-    const img = <img src={article.img} className={cls.img} alt={article.title}/>
 
     if(view === ArticleView.BIG) {
         const textBlock = (article.blocks ?
@@ -54,7 +55,12 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
                 </div>
                 <Text title={article.title} className={cls.title}/>
                 {types}
-                {img}
+                <AppImage
+                    fallback={<Skeleton height={250} width='100%'/>}
+                    src={article.img}
+                    className={cls.img}
+                    alt={article.title}
+                />
                 {textBlock &&
                     <ArticleTextBlockComponent block={textBlock} className={cls.textBlock}/>
                 }
@@ -78,7 +84,12 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
         >
             <Card className={cls.card}>
                 <div className={cls.imageWrapper}>
-                    {img}
+                    <AppImage
+                        fallback={<Skeleton height={200} width={200}/>}
+                        src={article.img}
+                        className={cls.img}
+                        alt={article.title}
+                    />
                     {date}
                 </div>
                 <div className={cls.infoWrapper}>
