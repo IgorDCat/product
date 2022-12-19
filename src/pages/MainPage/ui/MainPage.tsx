@@ -7,7 +7,7 @@ import {VStack} from '@/shared/ui/Stack';
 const MainPage: FC = () => {
     const {t} = useTranslation();
     return (
-        <Page>
+        <Page data-testid='MainPage'>
             <VStack gap='10'>
                 {t('Main page')}
                 <Counter/>

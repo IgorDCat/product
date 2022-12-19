@@ -12,7 +12,7 @@ interface ComponentRenderOptions {
     asyncReducers?: DeepPartial<ReducersMapObject<StateSchema>>;
 }
 
-export function ComponentRender(component: ReactNode, options: ComponentRenderOptions = {}) {
+export const ComponentRender = (component: ReactNode, options: ComponentRenderOptions = {}) => {
     const {
         route = '/',
         initialState,

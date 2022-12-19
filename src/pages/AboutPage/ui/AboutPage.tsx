@@ -6,7 +6,7 @@ import {Page} from '@/widgets/Page';
 const AboutPage: FC = () => {
     const { t } = useTranslation('about');
     return (
-        <Page>
+        <Page data-testid='AboutPage'>
             {t('About page')}
         </Page>
     );

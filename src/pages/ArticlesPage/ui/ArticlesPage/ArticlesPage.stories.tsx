@@ -4,7 +4,7 @@ import React from 'react';
 import {articleForStories} from '@/shared/assets/tests/ArticleForStories';
 import {StoreDecorator} from '@/shared/config/storybook/StoreDecorator';
 import {ThemeDecorator} from '@/shared/config/storybook/ThemeDecorator';
-import {SortOrder} from '@/shared/types';
+import {SortOrder} from '@/shared/types/sort';
 import ArticlesPage from './ArticlesPage';
 import {Theme} from '@/shared/const/theme';
 
