@@ -666,6 +666,15 @@
       "roles": [
         "MANAGER"
       ]
+    },
+    {
+      "id": "4",
+      "username": "testuser",
+      "password": "123",
+      "avatar": "https://cs8.pikabu.ru/avatars/2353/x2353828-1043405994.png",
+      "roles": [
+        "ADMIN"
+      ]
     }
   ],
   "profile": [

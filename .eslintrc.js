@@ -13,10 +13,11 @@ module.exports = {
     ],
     'overrides': [
         {
-            files: ['**/?(*.)+(test|stories).[tj]s?(x)'],
+            files: ['**/?(*.)+(test|stories|cy).[tj]s?(x)'],
             rules: {
                 'i18next/no-literal-string': 'off',
-                'max-len': 'off'
+                'max-len': 'off',
+                'no-undef': 'off'
             }
         }
     ],
@@ -61,7 +62,8 @@ module.exports = {
         }],
         'prefer-const': 'off',
         'unused-imports/no-unused-imports': 'error',
-        '@typescript-eslint/no-non-null-assertion': 'off'
+        '@typescript-eslint/no-non-null-assertion': 'off',
+        '@typescript-eslint/no-namespace': 'off'
     },
     globals: {
         __IS_DEV__: true,

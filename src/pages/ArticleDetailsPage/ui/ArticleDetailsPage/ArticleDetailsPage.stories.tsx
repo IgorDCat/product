@@ -12,6 +12,21 @@ export default {
     argTypes: {
         backgroundColor: {control: 'color'},
     },
+    parameters:  {
+        mockData: [
+            {
+                url: __API__ + '/articles?_limit=4',
+                method: 'GET',
+                status: 200,
+                response: [
+                    {...articleForStories, id: 1},
+                    {...articleForStories, id: 2},
+                    {...articleForStories, id: 3},
+                    {...articleForStories, id: 4},
+                ],
+            },
+        ],
+    },
 } as ComponentMeta<typeof ArticleDetailsPage>;
 
 const Template: ComponentStory<typeof ArticleDetailsPage> = (args) => <ArticleDetailsPage {...args}/>;
@@ -22,4 +37,4 @@ Light.decorators = [StoreDecorator({articleDetails: {data: articleForStories} })
 
 export const Dark = Template.bind({});
 Dark.args = {};
-Dark.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({})];
+Dark.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({articleDetails: {data: articleForStories} })];
