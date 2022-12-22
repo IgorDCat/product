@@ -12,7 +12,6 @@ export function buildBabelLoader({isDev, isTsx}: buildBabelLoaderProps) {
         exclude: /node_modules/,
         use: {
             loader: 'babel-loader',
-            cacheDirectory: true,
             options: {
                 presets: ['@babel/preset-env'],
                 plugins: [

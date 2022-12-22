@@ -5,27 +5,53 @@ import {I18nextProvider} from 'react-i18next';
 import i18n from '@/shared/config/i18n/i18nForTests';
 import {MemoryRouter} from 'react-router-dom';
 import {StateSchema, StoreProvider} from '@/app/providers/StoreProvider';
+// eslint-disable-next-line fsd-path-checker/layer-imports
+import {ThemeProvider} from '@/app/providers/ThemeProvider';
+// eslint-disable-next-line fsd-path-checker/layer-imports
+import '@/app/styles/index.scss'
+import {Theme} from '@/shared/const/theme';
 
 interface ComponentRenderOptions {
     route?: string;
     initialState?: DeepPartial<StateSchema>;
     asyncReducers?: DeepPartial<ReducersMapObject<StateSchema>>;
+    theme?: Theme
 }
 
-export const ComponentRender = (component: ReactNode, options: ComponentRenderOptions = {}) => {
+interface TestProviderProps {
+    children?: ReactNode;
+    options?: ComponentRenderOptions;
+}
+
+export const TestProvider = (props: TestProviderProps) => {
+    const {children, options = {}} = props;
     const {
         route = '/',
         initialState,
-        asyncReducers
-    } = options
+        asyncReducers,
+        theme = Theme.LIGHT
+    } = options;
 
-    return render(
+    return (
         <MemoryRouter initialEntries={[route]}>
             <StoreProvider asyncReducers={asyncReducers} initialState={initialState as StateSchema}>
                 <I18nextProvider i18n={i18n}>
-                    {component}
+                    <ThemeProvider initialTheme={theme}>
+                        <div className={`app ${theme}`}>
+                            {children}
+                        </div>
+                    </ThemeProvider>
                 </I18nextProvider>
             </StoreProvider>
         </MemoryRouter>
-    )
-}
+    );
+};
+
+export const ComponentRender = (component: ReactNode, options: ComponentRenderOptions = {}) => {
+
+    return render(
+        <TestProvider options={options}>
+            {component}
+        </TestProvider>
+    );
+};
