@@ -78,7 +78,7 @@ export const ArticleDetails = memo(({
         />)
     } else {
         content = (<>
-            <HStack justify='center' max>
+            <HStack justify='center' max data-testid='ArticleDetails.info'>
                 <Avatar src={data?.img} size={200} className={cls.avatar}/>
             </HStack>
             <Text

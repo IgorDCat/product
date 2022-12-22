@@ -709,6 +709,17 @@
       "username": "manager",
       "avatar": "https://cs8.pikabu.ru/avatars/2353/x2353828-1043405994.png",
       "country": "USA"
+    },
+    {
+      "id": "4",
+      "firstname": "Test",
+      "lastname": "User",
+      "age": 123,
+      "currency": "USD",
+      "city": "NY",
+      "username": "testuser",
+      "avatar": "https://cs8.pikabu.ru/avatars/2353/x2353828-1043405994.png",
+      "country": "USA"
     }
   ],
   "article-ratings": [
