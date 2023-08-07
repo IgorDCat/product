@@ -13,6 +13,7 @@ import {fetchArticleRecommendations} from '../../model/services/fetchArticleReco
 import {articleDetailsPageReducer} from '../../model/slices';
 import {ArticleDetailsComments} from '../ArticleDetailsComments/ArticleDetailsComments';
 import {ArticleDetailsPageHeader} from '../ArticleDetailsPageHeader/ArticleDetailsPageHeader';
+import {getFeatureFlags} from '@/shared/lib/features';
 
 interface ArticleDetailsPageProps {
     className?: string;
@@ -30,13 +31,18 @@ const ArticleDetailsPage = memo(({className}: ArticleDetailsPageProps) => {
         dispatch(fetchArticleRecommendations());
     });
 
+    if(!id) {
+        return  null
+    }
+    const isArticleRatingEnabled = getFeatureFlags('isArticleRatingEnabled');
+
     return (
         <DynamicModuleLoader reducers={reducers}>
             <Page className={classNames('', {}, [className])}>
                 <VStack gap='16' max>
                     <ArticleDetailsPageHeader/>
                     <ArticleDetails id={id}/>
-                    {id && <ArticleRating articleId={id}/>}
+                    {isArticleRatingEnabled && <ArticleRating articleId={id}/>}
                     <ArticleRecommendationsList/>
                     {id && <ArticleDetailsComments id={id}/>}
                 </VStack>
