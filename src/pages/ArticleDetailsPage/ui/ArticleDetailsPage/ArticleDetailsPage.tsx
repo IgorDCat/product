@@ -14,6 +14,9 @@ import {articleDetailsPageReducer} from '../../model/slices';
 import {ArticleDetailsComments} from '../ArticleDetailsComments/ArticleDetailsComments';
 import {ArticleDetailsPageHeader} from '../ArticleDetailsPageHeader/ArticleDetailsPageHeader';
 import {getFeatureFlags} from '@/shared/lib/features';
+import {toggleFeatures} from '@/shared/lib/features';
+import { Card } from '@/shared/ui/Card';
+import {t} from 'i18next';
 
 interface ArticleDetailsPageProps {
     className?: string;
@@ -36,13 +39,19 @@ const ArticleDetailsPage = memo(({className}: ArticleDetailsPageProps) => {
     }
     const isArticleRatingEnabled = getFeatureFlags('isArticleRatingEnabled');
 
+    const rating = toggleFeatures({
+        name: 'isArticleRatingEnabled',
+        on: () => <ArticleRating articleId={id}/>,
+        off: () => <Card>{t('Article rating coming soon!')}</Card>
+    })
+
     return (
         <DynamicModuleLoader reducers={reducers}>
             <Page className={classNames('', {}, [className])}>
                 <VStack gap='16' max>
                     <ArticleDetailsPageHeader/>
                     <ArticleDetails id={id}/>
-                    {isArticleRatingEnabled && <ArticleRating articleId={id}/>}
+                    {rating}
                     <ArticleRecommendationsList/>
                     {id && <ArticleDetailsComments id={id}/>}
                 </VStack>
