@@ -651,6 +651,11 @@
       ],
       "features": {
         "isArticleRatingEnabled": false
+      },
+      "jsonSettings": {
+        "theme": "app_light_theme",
+        "isFirstVisit": true,
+        "settingsPageHasBeenOpen": false
       }
     },
     {
@@ -662,7 +667,15 @@
       ],
       "features": {
         "isArticleRatingEnabled": true
-      }
+      },
+      "jsonSettings": {
+        "theme": "app_dark_theme",
+        "isFirstVisit": true,
+        "settingsPageHasBeenOpen": false
+      },
+      "theme": "app_green_theme",
+      "isFirstVisit": true,
+      "settingsPageHasBeenOpen": false
     },
     {
       "id": "3",
@@ -674,6 +687,11 @@
       ],
       "features": {
         "isArticleRatingEnabled": true
+      },
+      "jsonSettings": {
+        "theme": "app_light_theme",
+        "isFirstVisit": true,
+        "settingsPageHasBeenOpen": false
       }
     },
     {
@@ -686,6 +704,11 @@
       ],
       "features": {
         "isArticleRatingEnabled": true
+      },
+      "jsonSettings": {
+        "theme": "app_light_theme",
+        "isFirstVisit": true,
+        "settingsPageHasBeenOpen": false
       }
     }
   ],

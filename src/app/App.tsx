@@ -11,7 +11,7 @@ import './styles/index.scss'
 export const App = () => {
     const {theme} = useTheme();
     const dispatch = useDispatch();
-    const isInit = useSelector(getUserIsInit)
+    const isInit = useSelector(getUserIsInit);
 
     useEffect(() => {
         dispatch(userActions.initAuthData())
