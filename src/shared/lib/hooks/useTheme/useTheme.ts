@@ -29,5 +29,8 @@ export function useTheme(): useThemeResult {
         saveAction?.(newTheme);
     }
 
-    return {theme, changeTheme}
+    return {
+        theme: theme || Theme.LIGHT,
+        changeTheme
+    }
 }

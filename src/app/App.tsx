@@ -1,21 +1,27 @@
 import {useTheme} from '@/shared/lib/hooks/useTheme/useTheme';
 import {AppRouter} from './providers/router';
-import {getUserIsInit, userActions} from '@/entities/User';
+import {getUserIsInit, initAuthData} from '@/entities/User';
 import React, {Suspense, useEffect} from 'react';
-import {useDispatch, useSelector} from 'react-redux';
+import {useSelector} from 'react-redux';
 import {classNames} from '@/shared/lib/classNames/classNames';
 import {Navbar} from '@/widgets/Navbar';
 import {Sidebar} from '@/widgets/Sidebar';
 import './styles/index.scss'
+import {useAppDispatch} from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
+import {PageLoader} from '@/widgets/PageLoader';
 
 export const App = () => {
     const {theme} = useTheme();
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
     const isInit = useSelector(getUserIsInit);
 
     useEffect(() => {
-        dispatch(userActions.initAuthData())
+        dispatch(initAuthData())
     }, [dispatch]);
+
+    if(!isInit) {
+        return <PageLoader/>
+    }
 
     return (
         <Suspense fallback="">

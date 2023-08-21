@@ -9,10 +9,8 @@ import {setJsonSettingsMutation} from '../api/userApi';
 export const saveJsonSettings = createAsyncThunk<JsonSettings, JsonSettings, ThunkConfig<string>>(
     'user/saveJsonSettings',
     async (newJsonSettings, thunkAPI) => {
-
         const {getState, rejectWithValue, dispatch} = thunkAPI;
         const userData = getUserAuthData(getState());
-
         const currentSettings = getJsonSettings(getState());
 
         if(!userData) {
@@ -31,7 +29,7 @@ export const saveJsonSettings = createAsyncThunk<JsonSettings, JsonSettings, Thu
             if(!response.jsonSettings) {
                 return rejectWithValue('')
             }
-            console.log(newJsonSettings)
+
             return response.jsonSettings;
 
         } catch (e) {
