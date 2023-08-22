@@ -654,7 +654,7 @@
       },
       "jsonSettings": {
         "theme": "app_light_theme",
-        "isFirstVisit": true,
+        "isFirstVisitArticles": true,
         "settingsPageHasBeenOpen": false
       }
     },
@@ -670,7 +670,7 @@
       },
       "jsonSettings": {
         "theme": "app_light_theme",
-        "isFirstVisit": true,
+        "isFirstVisitArticles": false,
         "settingsPageHasBeenOpen": false
       }
     },
@@ -687,7 +687,7 @@
       },
       "jsonSettings": {
         "theme": "app_light_theme",
-        "isFirstVisit": true,
+        "isFirstVisitArticles": true,
         "settingsPageHasBeenOpen": false
       }
     },
@@ -704,7 +704,7 @@
       },
       "jsonSettings": {
         "theme": "app_light_theme",
-        "isFirstVisit": true,
+        "isFirstVisitArticles": true,
         "settingsPageHasBeenOpen": false
       }
     }
